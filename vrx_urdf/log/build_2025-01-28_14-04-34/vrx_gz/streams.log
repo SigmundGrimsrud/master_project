@@ -1,0 +1,628 @@
+[0.009s] Invoking command in '/home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz': AMENT_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:/home/sigmu/master/install/wamv_gazebo:/home/sigmu/master/install/wamv_description:/home/sigmu/master/install/vrx_gz:/home/sigmu/master/install/vrx_ros:/home/sigmu/master/install/vrx_gazebo:/home/sigmu/FRE24/install/webots_ros2_control:/home/sigmu/FRE24/install/webots_ros2_driver:/home/sigmu/FRE24/install/webots_ros2_msgs:/home/sigmu/FRE24/install/fre_custom_srv_msg:/home/sigmu/FRE24/install/action_pkg:/home/sigmu/realsense-ros/install/realsense2_description:/home/sigmu/realsense-ros/install/realsense2_camera:/home/sigmu/realsense-ros/install/realsense2_camera_msgs:/home/sigmu/FRE24/install/yo-lo:/home/sigmu/FRE24/install/webots_ros2:/home/sigmu/FRE24/install/webots_ros2_universal_robot:/home/sigmu/FRE24/install/webots_ros2_turtlebot:/home/sigmu/FRE24/install/webots_ros2_tiago:/home/sigmu/FRE24/install/webots_ros2_tests:/home/sigmu/FRE24/install/webots_ros2_tesla:/home/sigmu/FRE24/install/webots_ros2_mavic:/home/sigmu/FRE24/install/webots_ros2_epuck:/home/sigmu/FRE24/install/webots_ros2_importer:/home/sigmu/FRE24/install/task4:/home/sigmu/FRE24/install/task3:/home/sigmu/FRE24/install/row_follower:/home/sigmu/FRE24/install/pose_subscriber:/home/sigmu/FRE24/install/fre_test:/home/sigmu/FRE24/install/fre_slam_task2:/home/sigmu/FRE24/install/fre_navigation:/home/sigmu/FRE24/install/fre_camera:/home/sigmu/FRE24/install/fre_api:/opt/ros/humble /usr/bin/cmake /home/sigmu/master/src/vrx/vrx_gz -DCMAKE_INSTALL_PREFIX=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz
+[0.056s] -- The C compiler identification is GNU 11.4.0
+[0.100s] -- The CXX compiler identification is GNU 11.4.0
+[0.107s] -- Detecting C compiler ABI info
+[0.169s] -- Detecting C compiler ABI info - done
+[0.174s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.174s] -- Detecting C compile features
+[0.174s] -- Detecting C compile features - done
+[0.176s] -- Detecting CXX compiler ABI info
+[0.246s] -- Detecting CXX compiler ABI info - done
+[0.251s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.251s] -- Detecting CXX compile features
+[0.252s] -- Detecting CXX compile features - done
+[0.257s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.409s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.547s] -- Looking for gz-sim7 -- found version 7.9.0
+[0.556s] -- Searching for dependencies of gz-sim7
+[0.561s] -- Looking for sdformat13 -- found version 13.8.0
+[0.561s] -- Searching for dependencies of sdformat13
+[0.567s] -- Checking for module 'tinyxml2'
+[0.580s] --   Found tinyxml2, version 9.0.0
+[0.615s] -- Looking for gz-math7 -- found version 7.5.1
+[0.616s] -- Searching for dependencies of gz-math7
+[0.621s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.621s] -- Searching for dependencies of gz-utils2
+[0.622s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.622s] -- Searching for dependencies of gz-utils2
+[0.622s] -- Searching for <gz-utils2> component [cli]
+[0.627s] -- Looking for gz-utils2-cli -- found version 2.2.0
+[0.628s] -- Searching for dependencies of gz-utils2-cli
+[0.634s] -- Looking for gz-plugin2 -- found version 2.0.3
+[0.634s] -- Searching for dependencies of gz-plugin2
+[0.635s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.635s] -- Searching for <gz-plugin2> component [loader]
+[0.640s] -- Looking for gz-plugin2-loader -- found version 2.0.3
+[0.641s] -- Searching for dependencies of gz-plugin2-loader
+[0.641s] -- Searching for <gz-plugin2> component [register]
+[0.647s] -- Looking for gz-plugin2-register -- found version 2.0.3
+[0.647s] -- Searching for dependencies of gz-plugin2-register
+[0.653s] -- Looking for gz-transport12 -- found version 12.2.2
+[0.653s] -- Searching for dependencies of gz-transport12
+[0.819s] -- Found Protobuf: /usr/lib/x86_64-linux-gnu/libprotobuf.so (found version "3.12.4") 
+[0.834s] -- Config-file not installed for ZeroMQ -- checking for pkg-config
+[0.838s] -- Checking for module 'libzmq >= 4'
+[0.852s] --   Found libzmq , version 4.3.4
+[0.888s] -- Found ZeroMQ: TRUE (Required is at least version "4") 
+[0.893s] -- Checking for module 'uuid'
+[0.907s] --   Found uuid, version 2.37.2
+[0.940s] -- Found UUID: TRUE  
+[0.941s] -- Looking for gz-utils2 -- found version 2.2.0
+[0.946s] -- Looking for gz-msgs9 -- found version 9.5.1
+[0.946s] -- Searching for dependencies of gz-msgs9
+[0.968s] -- Looking for gz-math7 -- found version 7.5.1
+[0.972s] -- Searching for <gz-transport12> component [log]
+[0.986s] -- Looking for gz-transport12-log -- found version 12.2.2
+[0.986s] -- Searching for dependencies of gz-transport12-log
+[0.987s] -- Searching for <gz-transport12> component [parameters]
+[0.992s] -- Looking for gz-transport12-parameters -- found version 12.2.2
+[0.993s] -- Searching for dependencies of gz-transport12-parameters
+[0.994s] -- Looking for gz-msgs9 -- found version 9.5.1
+[0.999s] -- Looking for gz-common5 -- found version 5.7.0
+[0.999s] -- Searching for dependencies of gz-common5
+[1.000s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.000s] -- Looking for dlfcn.h - found
+[1.002s] -- Looking for libdl - found
+[1.003s] -- Found DL: TRUE  
+[1.008s] -- Searching for <gz-common5> component [profiler]
+[1.014s] -- Looking for gz-common5-profiler -- found version 5.7.0
+[1.014s] -- Searching for dependencies of gz-common5-profiler
+[1.014s] -- Searching for <gz-common5> component [events]
+[1.020s] -- Looking for gz-common5-events -- found version 5.7.0
+[1.020s] -- Searching for dependencies of gz-common5-events
+[1.020s] -- Looking for gz-math7 -- found version 7.5.1
+[1.021s] -- Searching for <gz-common5> component [av]
+[1.026s] -- Looking for gz-common5-av -- found version 5.7.0
+[1.027s] -- Searching for dependencies of gz-common5-av
+[1.031s] -- Checking for module 'libswscale'
+[1.045s] --   Found libswscale, version 5.9.100
+[1.079s] -- Found SWSCALE: TRUE  
+[1.083s] -- Checking for module 'libavdevice >= 56.4.100'
+[1.098s] --   Found libavdevice , version 58.13.100
+[1.135s] -- Found AVDEVICE: TRUE (Required is at least version "56.4.100") 
+[1.140s] -- Checking for module 'libavformat'
+[1.153s] --   Found libavformat, version 58.76.100
+[1.188s] -- Found AVFORMAT: TRUE  
+[1.194s] -- Checking for module 'libavcodec'
+[1.208s] --   Found libavcodec, version 58.134.100
+[1.244s] -- Found AVCODEC: TRUE  
+[1.250s] -- Checking for module 'libavutil'
+[1.263s] --   Found libavutil, version 56.70.100
+[1.298s] -- Found AVUTIL: TRUE  
+[1.300s] -- Searching for <gz-common5> component [io]
+[1.306s] -- Looking for gz-common5-io -- found version 5.7.0
+[1.306s] -- Searching for dependencies of gz-common5-io
+[1.312s] -- Looking for gz-fuel_tools8 -- found version 8.2.0
+[1.312s] -- Searching for dependencies of gz-fuel_tools8
+[1.400s] -- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "7.81.0")  
+[1.411s] -- Checking for module 'jsoncpp'
+[1.426s] --   Found jsoncpp, version 1.9.5
+[1.460s] -- Found JSONCPP: TRUE  
+[1.469s] -- Checking for module 'libzip'
+[1.483s] --   Found libzip, version 1.7.3
+[1.517s] -- Found ZIP: TRUE  
+[1.517s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.518s] -- Looking for gz-common5 -- found version 5.7.0
+[1.518s] -- Searching for dependencies of gz-common5
+[1.518s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.519s] -- Looking for dlfcn.h - found
+[1.519s] -- Looking for libdl - found
+[1.525s] -- Searching for <gz-common5> component [testing]
+[1.532s] -- Looking for gz-common5-testing -- found version 5.7.0
+[1.532s] -- Searching for dependencies of gz-common5-testing
+[1.533s] -- Looking for gz-math7 -- found version 7.5.1
+[1.533s] -- Looking for gz-msgs9 -- found version 9.5.1
+[1.539s] -- Looking for gz-gui7 -- found version 7.2.2
+[1.539s] -- Searching for dependencies of gz-gui7
+[1.566s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.566s] -- Looking for gz-math7 -- found version 7.5.1
+[1.567s] -- Looking for gz-common5 -- found version 5.7.0
+[1.567s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.567s] -- Looking for gz-transport12 -- found version 12.2.2
+[1.573s] -- Looking for gz-rendering7 -- found version 7.5.0
+[1.574s] -- Searching for dependencies of gz-rendering7
+[1.574s] -- Looking for gz-math7 -- found version 7.5.1
+[1.574s] -- Searching for dependencies of gz-math7
+[1.574s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.574s] -- Searching for <gz-math7> component [eigen3]
+[1.580s] -- Looking for gz-math7-eigen3 -- found version 7.5.1
+[1.580s] -- Searching for dependencies of gz-math7-eigen3
+[1.591s] -- Looking for gz-common5 -- found version 5.7.0
+[1.592s] -- Searching for dependencies of gz-common5
+[1.592s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.592s] -- Looking for dlfcn.h - found
+[1.592s] -- Looking for libdl - found
+[1.598s] -- Searching for <gz-common5> component [graphics]
+[1.604s] -- Looking for gz-common5-graphics -- found version 5.7.0
+[1.604s] -- Searching for dependencies of gz-common5-graphics
+[1.604s] -- Looking for gz-math7 -- found version 7.5.1
+[1.616s] -- Found GzAssimp: TRUE (found version "5.2.0") 
+[1.617s] -- Searching for <gz-common5> component [events]
+[1.617s] -- Searching for <gz-common5> component [geospatial]
+[1.623s] -- Looking for gz-common5-geospatial -- found version 5.7.0
+[1.623s] -- Searching for dependencies of gz-common5-geospatial
+[1.623s] -- Looking for gz-math7 -- found version 7.5.1
+[1.624s] -- Looking for gz-common5 -- found version 5.7.0
+[1.625s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.625s] -- Searching for dependencies of gz-plugin2
+[1.625s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.625s] -- Searching for <gz-plugin2> component [all]
+[1.631s] -- Looking for all libraries of gz-plugin2 -- found version 2.0.3
+[1.631s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.632s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.640s] -- Found OpenGL: /usr/lib/x86_64-linux-gnu/libOpenGL.so  found components: OpenGL 
+[1.641s] -- Looking for gz-msgs9 -- found version 9.5.1
+[1.674s] -- Looking for gz-physics6 -- found version 6.7.0
+[1.675s] -- Searching for dependencies of gz-physics6
+[1.675s] -- Looking for gz-common5 -- found version 5.7.0
+[1.675s] -- Looking for gz-math7 -- found version 7.5.1
+[1.676s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.676s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.677s] -- Searching for <gz-physics6> component [heightmap]
+[1.682s] -- Looking for gz-physics6-heightmap -- found version 6.7.0
+[1.682s] -- Searching for dependencies of gz-physics6-heightmap
+[1.683s] -- Looking for gz-common5 -- found version 5.7.0
+[1.683s] -- Searching for <gz-physics6> component [mesh]
+[1.688s] -- Looking for gz-physics6-mesh -- found version 6.7.0
+[1.689s] -- Searching for dependencies of gz-physics6-mesh
+[1.689s] -- Looking for gz-common5 -- found version 5.7.0
+[1.689s] -- Searching for <gz-physics6> component [sdf]
+[1.695s] -- Looking for gz-physics6-sdf -- found version 6.7.0
+[1.695s] -- Searching for dependencies of gz-physics6-sdf
+[1.695s] -- Looking for sdformat13 -- found version 13.8.0
+[1.701s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.702s] -- Searching for dependencies of gz-sensors7
+[1.724s] -- Looking for gz-math7 -- found version 7.5.1
+[1.724s] -- Looking for gz-common5 -- found version 5.7.0
+[1.725s] -- Looking for gz-transport12 -- found version 12.2.2
+[1.725s] -- Looking for gz-rendering7 -- found version 7.5.0
+[1.725s] -- Looking for gz-msgs9 -- found version 9.5.1
+[1.726s] -- Looking for sdformat13 -- found version 13.8.0
+[1.726s] -- Searching for <gz-sensors7> component [air_pressure]
+[1.732s] -- Looking for gz-sensors7-air_pressure -- found version 7.3.1
+[1.732s] -- Searching for dependencies of gz-sensors7-air_pressure
+[1.733s] -- Searching for <gz-sensors7> component [air_speed]
+[1.738s] -- Looking for gz-sensors7-air_speed -- found version 7.3.1
+[1.738s] -- Searching for dependencies of gz-sensors7-air_speed
+[1.739s] -- Searching for <gz-sensors7> component [altimeter]
+[1.744s] -- Looking for gz-sensors7-altimeter -- found version 7.3.1
+[1.744s] -- Searching for dependencies of gz-sensors7-altimeter
+[1.745s] -- Searching for <gz-sensors7> component [imu]
+[1.751s] -- Looking for gz-sensors7-imu -- found version 7.3.1
+[1.751s] -- Searching for dependencies of gz-sensors7-imu
+[1.751s] -- Searching for <gz-sensors7> component [force_torque]
+[1.757s] -- Looking for gz-sensors7-force_torque -- found version 7.3.1
+[1.757s] -- Searching for dependencies of gz-sensors7-force_torque
+[1.757s] -- Searching for <gz-sensors7> component [logical_camera]
+[1.763s] -- Looking for gz-sensors7-logical_camera -- found version 7.3.1
+[1.763s] -- Searching for dependencies of gz-sensors7-logical_camera
+[1.764s] -- Searching for <gz-sensors7> component [magnetometer]
+[1.769s] -- Looking for gz-sensors7-magnetometer -- found version 7.3.1
+[1.770s] -- Searching for dependencies of gz-sensors7-magnetometer
+[1.770s] -- Searching for <gz-sensors7> component [navsat]
+[1.775s] -- Looking for gz-sensors7-navsat -- found version 7.3.1
+[1.776s] -- Searching for dependencies of gz-sensors7-navsat
+[1.776s] -- Searching for <gz-sensors7> component [rendering]
+[1.782s] -- Looking for gz-sensors7-rendering -- found version 7.3.1
+[1.782s] -- Searching for dependencies of gz-sensors7-rendering
+[1.782s] -- Searching for <gz-sensors7> component [lidar]
+[1.788s] -- Looking for gz-sensors7-lidar -- found version 7.3.1
+[1.788s] -- Searching for dependencies of gz-sensors7-lidar
+[1.788s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.789s] -- Searching for <gz-sensors7> component [gpu_lidar]
+[1.794s] -- Looking for gz-sensors7-gpu_lidar -- found version 7.3.1
+[1.795s] -- Searching for dependencies of gz-sensors7-gpu_lidar
+[1.795s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.796s] -- Searching for <gz-sensors7> component [camera]
+[1.801s] -- Looking for gz-sensors7-camera -- found version 7.3.1
+[1.801s] -- Searching for dependencies of gz-sensors7-camera
+[1.802s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.802s] -- Searching for <gz-sensors7> component [boundingbox_camera]
+[1.808s] -- Looking for gz-sensors7-boundingbox_camera -- found version 7.3.1
+[1.808s] -- Searching for dependencies of gz-sensors7-boundingbox_camera
+[1.808s] -- Searching for <gz-sensors7> component [segmentation_camera]
+[1.814s] -- Looking for gz-sensors7-segmentation_camera -- found version 7.3.1
+[1.814s] -- Searching for dependencies of gz-sensors7-segmentation_camera
+[1.815s] -- Searching for <gz-sensors7> component [depth_camera]
+[1.820s] -- Looking for gz-sensors7-depth_camera -- found version 7.3.1
+[1.820s] -- Searching for dependencies of gz-sensors7-depth_camera
+[1.821s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.821s] -- Searching for <gz-sensors7> component [rgbd_camera]
+[1.827s] -- Looking for gz-sensors7-rgbd_camera -- found version 7.3.1
+[1.827s] -- Searching for dependencies of gz-sensors7-rgbd_camera
+[1.827s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.828s] -- Searching for <gz-sensors7> component [thermal_camera]
+[1.833s] -- Looking for gz-sensors7-thermal_camera -- found version 7.3.1
+[1.834s] -- Searching for dependencies of gz-sensors7-thermal_camera
+[1.834s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.834s] -- Searching for <gz-sensors7> component [wide_angle_camera]
+[1.840s] -- Looking for gz-sensors7-wide_angle_camera -- found version 7.3.1
+[1.840s] -- Searching for dependencies of gz-sensors7-wide_angle_camera
+[1.841s] -- Looking for gz-rendering7 -- found version 7.5.0
+[1.841s] -- Looking for gz-math7 -- found version 7.5.1
+[1.842s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.865s] -- Looking for gz-common5 -- found version 5.7.0
+[1.865s] -- Looking for gz-fuel_tools8 -- found version 8.2.0
+[1.866s] -- Looking for gz-math7 -- found version 7.5.1
+[1.866s] -- Looking for gz-msgs9 -- found version 9.5.1
+[1.866s] -- Looking for gz-transport12 -- found version 12.2.2
+[1.866s] -- Looking for gz-plugin2 -- found version 2.0.3
+[1.867s] -- Looking for gz-rendering7 -- found version 7.5.0
+[1.867s] -- Looking for gz-sensors7 -- found version 7.3.1
+[1.867s] -- Looking for gz-utils2 -- found version 2.2.0
+[1.868s] -- Looking for sdformat13 -- found version 13.8.0
+[1.872s] -- Found std_msgs: 4.2.4 (/opt/ros/humble/share/std_msgs/cmake)
+[1.922s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.933s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.945s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.961s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.983s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.149s] -- Configuring done
+[2.236s] -- Generating done
+[2.253s] -- Build files have been written to: /home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz
+[2.265s] Invoked command in '/home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:/home/sigmu/master/install/wamv_gazebo:/home/sigmu/master/install/wamv_description:/home/sigmu/master/install/vrx_gz:/home/sigmu/master/install/vrx_ros:/home/sigmu/master/install/vrx_gazebo:/home/sigmu/FRE24/install/webots_ros2_control:/home/sigmu/FRE24/install/webots_ros2_driver:/home/sigmu/FRE24/install/webots_ros2_msgs:/home/sigmu/FRE24/install/fre_custom_srv_msg:/home/sigmu/FRE24/install/action_pkg:/home/sigmu/realsense-ros/install/realsense2_description:/home/sigmu/realsense-ros/install/realsense2_camera:/home/sigmu/realsense-ros/install/realsense2_camera_msgs:/home/sigmu/FRE24/install/yo-lo:/home/sigmu/FRE24/install/webots_ros2:/home/sigmu/FRE24/install/webots_ros2_universal_robot:/home/sigmu/FRE24/install/webots_ros2_turtlebot:/home/sigmu/FRE24/install/webots_ros2_tiago:/home/sigmu/FRE24/install/webots_ros2_tests:/home/sigmu/FRE24/install/webots_ros2_tesla:/home/sigmu/FRE24/install/webots_ros2_mavic:/home/sigmu/FRE24/install/webots_ros2_epuck:/home/sigmu/FRE24/install/webots_ros2_importer:/home/sigmu/FRE24/install/task4:/home/sigmu/FRE24/install/task3:/home/sigmu/FRE24/install/row_follower:/home/sigmu/FRE24/install/pose_subscriber:/home/sigmu/FRE24/install/fre_test:/home/sigmu/FRE24/install/fre_slam_task2:/home/sigmu/FRE24/install/fre_navigation:/home/sigmu/FRE24/install/fre_camera:/home/sigmu/FRE24/install/fre_api:/opt/ros/humble /usr/bin/cmake /home/sigmu/master/src/vrx/vrx_gz -DCMAKE_INSTALL_PREFIX=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz
+[2.266s] Invoking command in '/home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz': AMENT_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:/home/sigmu/master/install/wamv_gazebo:/home/sigmu/master/install/wamv_description:/home/sigmu/master/install/vrx_gz:/home/sigmu/master/install/vrx_ros:/home/sigmu/master/install/vrx_gazebo:/home/sigmu/FRE24/install/webots_ros2_control:/home/sigmu/FRE24/install/webots_ros2_driver:/home/sigmu/FRE24/install/webots_ros2_msgs:/home/sigmu/FRE24/install/fre_custom_srv_msg:/home/sigmu/FRE24/install/action_pkg:/home/sigmu/realsense-ros/install/realsense2_description:/home/sigmu/realsense-ros/install/realsense2_camera:/home/sigmu/realsense-ros/install/realsense2_camera_msgs:/home/sigmu/FRE24/install/yo-lo:/home/sigmu/FRE24/install/webots_ros2:/home/sigmu/FRE24/install/webots_ros2_universal_robot:/home/sigmu/FRE24/install/webots_ros2_turtlebot:/home/sigmu/FRE24/install/webots_ros2_tiago:/home/sigmu/FRE24/install/webots_ros2_tests:/home/sigmu/FRE24/install/webots_ros2_tesla:/home/sigmu/FRE24/install/webots_ros2_mavic:/home/sigmu/FRE24/install/webots_ros2_epuck:/home/sigmu/FRE24/install/webots_ros2_importer:/home/sigmu/FRE24/install/task4:/home/sigmu/FRE24/install/task3:/home/sigmu/FRE24/install/row_follower:/home/sigmu/FRE24/install/pose_subscriber:/home/sigmu/FRE24/install/fre_test:/home/sigmu/FRE24/install/fre_slam_task2:/home/sigmu/FRE24/install/fre_navigation:/home/sigmu/FRE24/install/fre_camera:/home/sigmu/FRE24/install/fre_api:/opt/ros/humble /usr/bin/cmake --build /home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz -- -j16 -l16
+[2.317s] [  4%] [32mBuilding CXX object CMakeFiles/ScoringPlugin.dir/src/ScoringPlugin.cc.o[0m
+[2.317s] [  4%] [32mBuilding CXX object CMakeFiles/Waves.dir/src/Wavefield.cc.o[0m
+[2.326s] [  4%] Built target ament_cmake_python_copy_vrx_gz
+[2.555s] running egg_info
+[2.555s] creating vrx_gz.egg-info
+[2.555s] writing vrx_gz.egg-info/PKG-INFO
+[2.556s] writing dependency_links to vrx_gz.egg-info/dependency_links.txt
+[2.556s] writing top-level names to vrx_gz.egg-info/top_level.txt
+[2.556s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[2.558s] reading manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[2.558s] writing manifest file 'vrx_gz.egg-info/SOURCES.txt'
+[2.582s] [  4%] Built target ament_cmake_python_build_vrx_gz_egg
+[4.934s] [  6%] [32m[1mLinking CXX shared library libWaves.so[0m
+[5.121s] [  6%] Built target Waves
+[5.143s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/PolyhedronVolume.cc.o[0m
+[5.143s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/PolyhedraBuoyancyDrag.cc.o[0m
+[5.143s] [ 12%] [32mBuilding CXX object CMakeFiles/PolyhedraBuoyancyDrag.dir/src/ShapeVolume.cc.o[0m
+[5.988s] [ 14%] [32m[1mLinking CXX shared library libScoringPlugin.so[0m
+[6.212s] [ 14%] Built target ScoringPlugin
+[6.241s] [ 20%] [32mBuilding CXX object CMakeFiles/AcousticPerceptionScoringPlugin.dir/src/AcousticPerceptionScoringPlugin.cc.o[0m
+[6.242s] [ 20%] [32mBuilding CXX object CMakeFiles/GymkhanaScoringPlugin.dir/src/GymkhanaScoringPlugin.cc.o[0m
+[6.242s] [ 20%] [32mBuilding CXX object CMakeFiles/AcousticTrackingScoringPlugin.dir/src/AcousticTrackingScoringPlugin.cc.o[0m
+[6.242s] [ 25%] [32mBuilding CXX object CMakeFiles/StationkeepingScoringPlugin.dir/src/StationkeepingScoringPlugin.cc.o[0m
+[6.242s] [ 22%] [32mBuilding CXX object CMakeFiles/NavigationScoringPlugin.dir/src/NavigationScoringPlugin.cc.o[0m
+[6.242s] [ 27%] [32mBuilding CXX object CMakeFiles/WayfindingScoringPlugin.dir/src/WayfindingScoringPlugin.cc.o[0m
+[6.243s] [ 29%] [32mBuilding CXX object CMakeFiles/LightBuoyPlugin.dir/src/LightBuoyPlugin.cc.o[0m
+[6.243s] [ 35%] [32mBuilding CXX object CMakeFiles/PerceptionScoringPlugin.dir/src/PerceptionScoringPlugin.cc.o[0m
+[6.243s] [ 33%] [32mBuilding CXX object CMakeFiles/ScanDockScoringPlugin.dir/src/ScanDockScoringPlugin.cc.o[0m
+[6.244s] [ 41%] [32mBuilding CXX object CMakeFiles/BallShooterPlugin.dir/src/BallShooterPlugin.cc.o[0m
+[6.244s] [ 41%] [32mBuilding CXX object CMakeFiles/PublisherPlugin.dir/src/PublisherPlugin.cc.o[0m
+[6.244s] [ 41%] [32mBuilding CXX object CMakeFiles/PlacardPlugin.dir/src/PlacardPlugin.cc.o[0m
+[6.244s] [ 35%] [32mBuilding CXX object CMakeFiles/AcousticPingerPlugin.dir/src/AcousticPingerPlugin.cc.o[0m
+[6.245s] [ 43%] [32mBuilding CXX object CMakeFiles/SimpleHydrodynamics.dir/src/SimpleHydrodynamics.cc.o[0m
+[6.500s] [ 45%] [32mBuilding CXX object CMakeFiles/AcousticPerceptionScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[11.381s] [ 47%] [32m[1mLinking CXX shared library libPublisherPlugin.so[0m
+[11.883s] [ 47%] Built target PublisherPlugin
+[11.901s] [ 50%] [32mBuilding CXX object CMakeFiles/StationkeepingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[12.090s] [ 52%] [32m[1mLinking CXX shared library libLightBuoyPlugin.so[0m
+[12.542s] [ 52%] Built target LightBuoyPlugin
+[12.563s] [ 54%] [32mBuilding CXX object CMakeFiles/WayfindingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[13.180s] [ 56%] [32m[1mLinking CXX shared library libGymkhanaScoringPlugin.so[0m
+[13.621s] [ 58%] [32m[1mLinking CXX shared library libSimpleHydrodynamics.so[0m
+[13.795s] [ 58%] Built target GymkhanaScoringPlugin
+[13.807s] [ 60%] [32m[1mLinking CXX shared library libPlacardPlugin.so[0m
+[13.815s] [ 62%] [32mBuilding CXX object CMakeFiles/AcousticTrackingScoringPlugin.dir/src/WaypointMarkers.cc.o[0m
+[14.091s] [ 62%] Built target SimpleHydrodynamics
+[14.128s] [ 64%] [32m[1mLinking CXX shared library libPolyhedraBuoyancyDrag.so[0m
+[14.134s] [ 66%] [32mBuilding CXX object CMakeFiles/Surface.dir/src/Surface.cc.o[0m
+[14.192s] [ 68%] [32mBuilding CXX object CMakeFiles/USVWind.dir/src/USVWind.cc.o[0m
+[14.378s] [ 68%] Built target PlacardPlugin
+[14.422s] [ 70%] [32mBuilding CXX object CMakeFiles/WaveVisual.dir/src/WaveVisual.cc.o[0m
+[14.834s] [ 70%] Built target PolyhedraBuoyancyDrag
+[14.880s] [ 72%] [32mBuilding CXX object CMakeFiles/WildlifeScoringPlugin.dir/src/WildlifeScoringPlugin.cc.o[0m
+[14.964s] [ 75%] [32m[1mLinking CXX shared library libAcousticPingerPlugin.so[0m
+[15.013s] [ 77%] [32m[1mLinking CXX shared library libPerceptionScoringPlugin.so[0m
+[15.658s] [ 77%] Built target AcousticPingerPlugin
+[15.783s] [ 77%] Built target PerceptionScoringPlugin
+[16.316s] [ 79%] [32m[1mLinking CXX shared library libNavigationScoringPlugin.so[0m
+[16.371s] [ 81%] [32m[1mLinking CXX shared library libAcousticPerceptionScoringPlugin.so[0m
+[16.781s] [ 83%] [32m[1mLinking CXX shared library libBallShooterPlugin.so[0m
+[16.795s] [ 83%] Built target AcousticPerceptionScoringPlugin
+[16.910s] [ 83%] Built target NavigationScoringPlugin
+[17.169s] [ 83%] Built target BallShooterPlugin
+[17.358s] [ 85%] [32m[1mLinking CXX shared library libScanDockScoringPlugin.so[0m
+[17.709s] [ 85%] Built target ScanDockScoringPlugin
+[18.566s] [ 87%] [32m[1mLinking CXX shared library libStationkeepingScoringPlugin.so[0m
+[18.730s] [ 89%] [32m[1mLinking CXX shared library libWayfindingScoringPlugin.so[0m
+[18.929s] [ 89%] Built target StationkeepingScoringPlugin
+[19.091s] [ 89%] Built target WayfindingScoringPlugin
+[19.502s] [ 91%] [32m[1mLinking CXX shared library libAcousticTrackingScoringPlugin.so[0m
+[19.567s] [ 93%] [32m[1mLinking CXX shared library libSurface.so[0m
+[19.822s] [ 93%] Built target AcousticTrackingScoringPlugin
+[19.846s] [ 93%] Built target Surface
+[20.777s] [ 95%] [32m[1mLinking CXX shared library libWildlifeScoringPlugin.so[0m
+[21.040s] [ 95%] Built target WildlifeScoringPlugin
+[21.108s] [ 97%] [32m[1mLinking CXX shared library libWaveVisual.so[0m
+[21.168s] [100%] [32m[1mLinking CXX shared library libUSVWind.so[0m
+[21.357s] [100%] Built target WaveVisual
+[21.408s] [100%] Built target USVWind
+[21.420s] Invoked command in '/home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:/home/sigmu/master/install/wamv_gazebo:/home/sigmu/master/install/wamv_description:/home/sigmu/master/install/vrx_gz:/home/sigmu/master/install/vrx_ros:/home/sigmu/master/install/vrx_gazebo:/home/sigmu/FRE24/install/webots_ros2_control:/home/sigmu/FRE24/install/webots_ros2_driver:/home/sigmu/FRE24/install/webots_ros2_msgs:/home/sigmu/FRE24/install/fre_custom_srv_msg:/home/sigmu/FRE24/install/action_pkg:/home/sigmu/realsense-ros/install/realsense2_description:/home/sigmu/realsense-ros/install/realsense2_camera:/home/sigmu/realsense-ros/install/realsense2_camera_msgs:/home/sigmu/FRE24/install/yo-lo:/home/sigmu/FRE24/install/webots_ros2:/home/sigmu/FRE24/install/webots_ros2_universal_robot:/home/sigmu/FRE24/install/webots_ros2_turtlebot:/home/sigmu/FRE24/install/webots_ros2_tiago:/home/sigmu/FRE24/install/webots_ros2_tests:/home/sigmu/FRE24/install/webots_ros2_tesla:/home/sigmu/FRE24/install/webots_ros2_mavic:/home/sigmu/FRE24/install/webots_ros2_epuck:/home/sigmu/FRE24/install/webots_ros2_importer:/home/sigmu/FRE24/install/task4:/home/sigmu/FRE24/install/task3:/home/sigmu/FRE24/install/row_follower:/home/sigmu/FRE24/install/pose_subscriber:/home/sigmu/FRE24/install/fre_test:/home/sigmu/FRE24/install/fre_slam_task2:/home/sigmu/FRE24/install/fre_navigation:/home/sigmu/FRE24/install/fre_camera:/home/sigmu/FRE24/install/fre_api:/opt/ros/humble /usr/bin/cmake --build /home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz -- -j16 -l16
+[21.422s] Invoking command in '/home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz': AMENT_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:/home/sigmu/master/install/wamv_gazebo:/home/sigmu/master/install/wamv_description:/home/sigmu/master/install/vrx_gz:/home/sigmu/master/install/vrx_ros:/home/sigmu/master/install/vrx_gazebo:/home/sigmu/FRE24/install/webots_ros2_control:/home/sigmu/FRE24/install/webots_ros2_driver:/home/sigmu/FRE24/install/webots_ros2_msgs:/home/sigmu/FRE24/install/fre_custom_srv_msg:/home/sigmu/FRE24/install/action_pkg:/home/sigmu/realsense-ros/install/realsense2_description:/home/sigmu/realsense-ros/install/realsense2_camera:/home/sigmu/realsense-ros/install/realsense2_camera_msgs:/home/sigmu/FRE24/install/yo-lo:/home/sigmu/FRE24/install/webots_ros2:/home/sigmu/FRE24/install/webots_ros2_universal_robot:/home/sigmu/FRE24/install/webots_ros2_turtlebot:/home/sigmu/FRE24/install/webots_ros2_tiago:/home/sigmu/FRE24/install/webots_ros2_tests:/home/sigmu/FRE24/install/webots_ros2_tesla:/home/sigmu/FRE24/install/webots_ros2_mavic:/home/sigmu/FRE24/install/webots_ros2_epuck:/home/sigmu/FRE24/install/webots_ros2_importer:/home/sigmu/FRE24/install/task4:/home/sigmu/FRE24/install/task3:/home/sigmu/FRE24/install/row_follower:/home/sigmu/FRE24/install/pose_subscriber:/home/sigmu/FRE24/install/fre_test:/home/sigmu/FRE24/install/fre_slam_task2:/home/sigmu/FRE24/install/fre_navigation:/home/sigmu/FRE24/install/fre_camera:/home/sigmu/FRE24/install/fre_api:/opt/ros/humble /usr/bin/cmake --install /home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz
+[21.429s] -- Install configuration: ""
+[21.429s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/resource_paths.dsv
+[21.429s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/resource_paths.sh
+[21.429s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWaves.so
+[21.430s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWaves.so" to ""
+[21.430s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPolyhedraBuoyancyDrag.so
+[21.432s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPolyhedraBuoyancyDrag.so" to ""
+[21.432s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libScoringPlugin.so
+[21.434s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libScoringPlugin.so" to ""
+[21.434s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libStationkeepingScoringPlugin.so
+[21.436s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libStationkeepingScoringPlugin.so" to ""
+[21.436s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWayfindingScoringPlugin.so
+[21.438s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWayfindingScoringPlugin.so" to ""
+[21.438s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libAcousticPerceptionScoringPlugin.so
+[21.440s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libAcousticPerceptionScoringPlugin.so" to ""
+[21.440s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libAcousticTrackingScoringPlugin.so
+[21.442s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libAcousticTrackingScoringPlugin.so" to ""
+[21.443s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libAcousticPingerPlugin.so
+[21.444s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libAcousticPingerPlugin.so" to ""
+[21.444s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libBallShooterPlugin.so
+[21.447s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libBallShooterPlugin.so" to ""
+[21.447s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libLightBuoyPlugin.so
+[21.448s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libLightBuoyPlugin.so" to ""
+[21.449s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libNavigationScoringPlugin.so
+[21.451s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libNavigationScoringPlugin.so" to ""
+[21.451s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libGymkhanaScoringPlugin.so
+[21.452s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libGymkhanaScoringPlugin.so" to ""
+[21.452s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPerceptionScoringPlugin.so
+[21.454s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPerceptionScoringPlugin.so" to ""
+[21.454s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPlacardPlugin.so
+[21.456s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPlacardPlugin.so" to ""
+[21.456s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPublisherPlugin.so
+[21.457s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libPublisherPlugin.so" to ""
+[21.457s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libScanDockScoringPlugin.so
+[21.460s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libScanDockScoringPlugin.so" to ""
+[21.460s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libSimpleHydrodynamics.so
+[21.462s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libSimpleHydrodynamics.so" to ""
+[21.462s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libSurface.so
+[21.463s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libSurface.so" to ""
+[21.463s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libUSVWind.so
+[21.465s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libUSVWind.so" to ""
+[21.465s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWaveVisual.so
+[21.467s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWaveVisual.so" to ""
+[21.467s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWildlifeScoringPlugin.so
+[21.469s] -- Set runtime path of "/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/lib/libWildlifeScoringPlugin.so" to ""
+[21.469s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/pythonpath.sh
+[21.469s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/pythonpath.dsv
+[21.469s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info
+[21.469s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/dependency_links.txt
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/top_level.txt
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/SOURCES.txt
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz-0.0.0-py3.10.egg-info/PKG-INFO
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/bridge.py
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/launch.py
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/model.py
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/bridges.py
+[21.470s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/__init__.py
+[21.471s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py
+[21.509s] Listing '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz'...
+[21.509s] Compiling '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/__init__.py'...
+[21.509s] Compiling '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/bridge.py'...
+[21.509s] Compiling '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/bridges.py'...
+[21.509s] Compiling '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/launch.py'...
+[21.509s] Compiling '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/model.py'...
+[21.509s] Compiling '/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/local/lib/python3.10/dist-packages/vrx_gz/payload_bridges.py'...
+[21.512s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/config
+[21.513s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/config/roboboat.yaml
+[21.513s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/config/wamv.yaml
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch/spawn.launch.py
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch/competition.launch.py
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch/vrx_environment.launch.py
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch/spawn_config.launch.py
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch/simple.launch.py
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/launch/usv_joy_teleop.py
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_2
+[21.514s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_2/model.sdf
+[21.515s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_2/model.config
+[21.515s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_ybr
+[21.515s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_ybr/model.sdf
+[21.515s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_ybr/model.config
+[21.516s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_2022
+[21.516s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_2022/model.sdf
+[21.516s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_2022/model.config
+[21.516s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4
+[21.516s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/model.sdf
+[21.517s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/model.config
+[21.517s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/mesh
+[21.517s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Normal.png
+[21.552s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/mesh/dock_block_4x4.dae
+[21.555s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Albedo.png
+[21.557s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Metalness.png
+[21.557s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_block_4x4/mesh/DockCubes_Roughness.png
+[21.558s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_4
+[21.559s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_4/model.sdf
+[21.559s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_4/model.config
+[21.559s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_course_2023_phase3_2
+[21.559s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_course_2023_phase3_2/model.sdf
+[21.560s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_course_2023_phase3_2/model.config
+[21.560s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02
+[21.560s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/model.sdf
+[21.560s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/meshes
+[21.560s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/meshes/roboboat02.dae
+[21.562s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials
+[21.562s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/textures
+[21.562s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Roughness.png
+[21.567s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Metallic.png
+[21.569s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Albedo.png
+[21.576s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/textures/Boat02_Normal.png
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/scripts
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/materials/scripts/model.material
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat02/model.config
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_bgy
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_bgy/model.sdf
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_bgy/model.config
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves
+[21.579s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/model.sdf
+[21.580s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/meshes
+[21.580s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/meshes/waterlow.dae
+[21.598s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials
+[21.598s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials/textures
+[21.598s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials/textures/wave_normals.dds
+[21.599s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials/textures/skybox_lowres.dds
+[21.601s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials/programs
+[21.601s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_vs_330.glsl
+[21.601s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/materials/programs/GerstnerWaves_fs_330.glsl
+[21.601s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/coast_waves/model.config
+[21.601s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/platform
+[21.601s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/platform/model.sdf
+[21.602s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/platform/model.config
+[21.602s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022
+[21.602s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/model.sdf
+[21.602s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/meshes
+[21.602s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/meshes/placard_2022.dae
+[21.602s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/materials
+[21.603s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/materials/textures
+[21.603s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/materials/textures/Placard.png
+[21.603s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/placard_2022/model.config
+[21.603s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_1
+[21.603s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_1/model.sdf
+[21.603s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_1/model.config
+[21.604s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_ygb
+[21.604s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_ygb/model.sdf
+[21.604s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_ygb/model.config
+[21.604s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_yrg
+[21.604s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_yrg/model.sdf
+[21.604s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_yrg/model.config
+[21.605s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/entrance_exit
+[21.605s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/entrance_exit/model.sdf
+[21.605s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/entrance_exit/model.config
+[21.605s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/obstacle_course
+[21.605s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/obstacle_course/model.sdf
+[21.605s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/obstacle_course/model.config
+[21.606s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01
+[21.606s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/model.sdf
+[21.606s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/meshes
+[21.606s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/meshes/housing.dae
+[21.607s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/meshes/mount.dae
+[21.607s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/meshes/roboboat01.dae
+[21.609s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/meshes/prop.dae
+[21.610s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials
+[21.610s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures
+[21.610s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Roughness.png
+[21.611s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Albedo.png
+[21.620s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Roughness.png
+[21.625s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Metallic.png
+[21.626s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures/Boat01_Normal.png
+[21.627s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/textures/Thruster_Albedo.png
+[21.629s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/scripts
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/materials/scripts/model.material
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat01/model.config
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_bgr
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_bgr/model.sdf
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_bgr/model.config
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_3
+[21.630s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_3/model.sdf
+[21.631s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_3/model.config
+[21.631s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/articulated_platform
+[21.631s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/articulated_platform/model.sdf
+[21.631s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/articulated_platform/model.config
+[21.631s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb
+[21.631s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/model.sdf
+[21.632s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/model.config
+[21.632s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh
+[21.632s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Metalness.png
+[21.632s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/robotx_light_buoy.dae
+[21.634s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Albedo.png
+[21.638s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Roughness.png
+[21.639s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Normal.png
+[21.645s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgb/mesh/LightTower_Opacity.png
+[21.645s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_5
+[21.645s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_5/model.sdf
+[21.645s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_5/model.config
+[21.645s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_course_2023_phase3_1
+[21.646s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_course_2023_phase3_1/model.sdf
+[21.646s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_course_2023_phase3_1/model.config
+[21.646s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox
+[21.646s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/model.sdf
+[21.646s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/meshes
+[21.646s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/meshes/drybox.dae
+[21.647s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/materials
+[21.647s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/materials/textures
+[21.648s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Albedo.png
+[21.656s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/materials/textures/DryBox_Roughness.png
+[21.669s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/roboboat_cpubox/model.config
+[21.669s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_gbr
+[21.669s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_gbr/model.sdf
+[21.669s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_gbr/model.config
+[21.670s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgy
+[21.670s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgy/model.sdf
+[21.670s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rgy/model.config
+[21.670s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rbg
+[21.670s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rbg/model.sdf
+[21.670s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/robotx_light_buoy_rbg/model.config
+[21.671s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_2022_base
+[21.671s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_2022_base/model.sdf
+[21.671s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/dock_2022_base/model.config
+[21.671s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_0
+[21.671s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_0/model.sdf
+[21.671s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/short_navigation_course_0/model.config
+[21.672s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/symbol_triangle
+[21.672s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/symbol_triangle/model.sdf
+[21.672s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/symbol_triangle/model.config
+[21.672s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/symbol_triangle/mesh
+[21.672s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/models/symbol_triangle/mesh/triangle.dae
+[21.672s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds
+[21.673s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/wildlife_task.sdf
+[21.673s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/navigation_task.sdf
+[21.673s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/follow_path_task.sdf
+[21.674s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/wayfinding_task.sdf
+[21.674s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/scan_dock_deliver_task.sdf
+[21.674s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/sydney_regatta.sdf
+[21.674s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice
+[21.675s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife1_task.sdf
+[21.675s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver0_task.sdf
+[21.675s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife2_task.sdf
+[21.676s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding0_task.sdf
+[21.676s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping0_task.sdf
+[21.676s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping1_task.sdf
+[21.677s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking1_task.sdf
+[21.677s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_stationkeeping2_task.sdf
+[21.677s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver1_task.sdf
+[21.678s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception1_task.sdf
+[21.678s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding2_task.sdf
+[21.678s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_wildlife0_task.sdf
+[21.679s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_perception2_task.sdf
+[21.679s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_perception0_task.sdf
+[21.679s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_perception1_task.sdf
+[21.680s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception0_task.sdf
+[21.680s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path0_task.sdf
+[21.680s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path2_task.sdf
+[21.681s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_scan_dock_deliver2_task.sdf
+[21.681s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_perception2_task.sdf
+[21.681s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_follow_path1_task.sdf
+[21.682s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking2_task.sdf
+[21.682s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_wayfinding1_task.sdf
+[21.682s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/2023_practice/practice_2023_acoustic_tracking0_task.sdf
+[21.683s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/stationkeeping_task.sdf
+[21.683s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/nbpark.sdf
+[21.683s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/gymkhana_task.sdf
+[21.684s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/simple.sdf
+[21.684s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/acoustic_tracking_task.sdf
+[21.684s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/simple_grid.sdf
+[21.684s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/acoustic_perception_task.sdf
+[21.685s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/worlds/perception_task.sdf
+[21.685s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/ament_index/resource_index/package_run_dependencies/vrx_gz
+[21.685s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/ament_index/resource_index/parent_prefix_path/vrx_gz
+[21.685s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/ament_prefix_path.sh
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/ament_prefix_path.dsv
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/path.sh
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/environment/path.dsv
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/local_setup.bash
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/local_setup.sh
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/local_setup.zsh
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/local_setup.dsv
+[21.686s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/package.dsv
+[21.687s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/ament_index/resource_index/packages/vrx_gz
+[21.687s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/cmake/vrx_gzConfig.cmake
+[21.687s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/cmake/vrx_gzConfig-version.cmake
+[21.687s] -- Installing: /home/sigmu/master/src/vrx/vrx_urdf/install/vrx_gz/share/vrx_gz/package.xml
+[21.689s] Invoked command in '/home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz' returned '0': AMENT_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/sigmu/master/src/vrx/vrx_urdf/install/vrx_ros:/home/sigmu/master/install/wamv_gazebo:/home/sigmu/master/install/wamv_description:/home/sigmu/master/install/vrx_gz:/home/sigmu/master/install/vrx_ros:/home/sigmu/master/install/vrx_gazebo:/home/sigmu/FRE24/install/webots_ros2_control:/home/sigmu/FRE24/install/webots_ros2_driver:/home/sigmu/FRE24/install/webots_ros2_msgs:/home/sigmu/FRE24/install/fre_custom_srv_msg:/home/sigmu/FRE24/install/action_pkg:/home/sigmu/realsense-ros/install/realsense2_description:/home/sigmu/realsense-ros/install/realsense2_camera:/home/sigmu/realsense-ros/install/realsense2_camera_msgs:/home/sigmu/FRE24/install/yo-lo:/home/sigmu/FRE24/install/webots_ros2:/home/sigmu/FRE24/install/webots_ros2_universal_robot:/home/sigmu/FRE24/install/webots_ros2_turtlebot:/home/sigmu/FRE24/install/webots_ros2_tiago:/home/sigmu/FRE24/install/webots_ros2_tests:/home/sigmu/FRE24/install/webots_ros2_tesla:/home/sigmu/FRE24/install/webots_ros2_mavic:/home/sigmu/FRE24/install/webots_ros2_epuck:/home/sigmu/FRE24/install/webots_ros2_importer:/home/sigmu/FRE24/install/task4:/home/sigmu/FRE24/install/task3:/home/sigmu/FRE24/install/row_follower:/home/sigmu/FRE24/install/pose_subscriber:/home/sigmu/FRE24/install/fre_test:/home/sigmu/FRE24/install/fre_slam_task2:/home/sigmu/FRE24/install/fre_navigation:/home/sigmu/FRE24/install/fre_camera:/home/sigmu/FRE24/install/fre_api:/opt/ros/humble /usr/bin/cmake --install /home/sigmu/master/src/vrx/vrx_urdf/build/vrx_gz

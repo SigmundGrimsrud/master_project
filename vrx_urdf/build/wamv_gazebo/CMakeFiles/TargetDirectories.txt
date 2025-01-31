@@ -1,0 +1,9 @@
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/uninstall.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/wamv_gazebo_uninstall.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/test.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/edit_cache.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/rebuild_cache.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/list_install_components.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/install.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/install/local.dir
+/home/sigmu/master/src/vrx/vrx_urdf/build/wamv_gazebo/CMakeFiles/install/strip.dir

@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="grid">
+    <link name="link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>package://solar_grid/models/grid/mesh/solar_grid_1.dae</uri> <!--solar_grid_free.dae or solar_grid_cross.dae-->
+            <!--scale>0.43 0.43 0.43</scale> 0.4255 from pixel counting, a bit to small-->
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>package://solar_grid/models/grid/mesh/solar_grid_1.dae</uri> <!--solar_grid_free.dae or solar_grid_cross.dae-->
+            <!--scale>0.43 0.43 0.43</scale> 0.4255 from pixel counting, a bit to small-->
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass>1000</mass> <!-- kg -->
+        <inertia>
+          <ixx>120</ixx>
+          <iyy>393</iyy>
+          <izz>446</izz>
+        </inertia>
+      </inertial>
+    </link>
+
+
+    <!-- Buoyancy plugin -->
+    <plugin name="vrx::PolyhedraBuoyancyDrag"
+            filename="libPolyhedraBuoyancyDrag.so">
+      <gravity>9.81</gravity>
+      <fluid_density>1000</fluid_density>
+      <fluid_level>-0.5</fluid_level>
+      <linear_drag>125.0</linear_drag>
+      <angular_drag>20.0</angular_drag>
+      <buoyancy name="collision_outer">
+        <link_name>link</link_name>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>10 6 1</size>
+          </box>
+        </geometry>
+      </buoyancy>
+      <wavefield>
+        <topic>/vrx/wavefield/parameters</topic>
+      </wavefield>
+    </plugin>
+
+  </model>
+</sdf>
+

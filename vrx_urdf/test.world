@@ -1,0 +1,69 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <world name="test_world">
+    <!-- Add the ground plane -->
+    <model name="ground_plane">
+      <static>true</static> <!-- Ensure the ground is static -->
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <!-- Define the ground as a plane -->
+            <plane>
+              <normal>0 0 1</normal> <!-- Normal vector for the plane (Z-axis) -->
+              <size>100 100</size>   <!-- Size of the ground plane -->
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <!-- Define the material for the ground -->
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name> <!-- Use a built-in material -->
+            </script>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    
+    
+    <!-- Add the catamaran model -->
+    <model name="test_catamaran">
+     <pose>0 0 0.15 0 0 0</pose> 
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <mesh>
+              <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>package://catamaran_description/models/catamaran/mesh/Untitled.001.png</uri>
+              <name>Untitled.001</name>
+            </script>
+          </material>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <mesh>
+              <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
+             <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+
+  </world>
+</sdf>
+
+

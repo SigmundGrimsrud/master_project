@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="catamaran">
+  
+    <link name="base_link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <uri>package://catamaran_description/models/catamaran/mesh/Untitled.001.png</uri>
+            <name>Untitled.001</name>
+          </script>
+        </material>
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
+            <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <inertial>
+        <mass>180</mass> <!-- kg -->
+        <inertia>
+          <ixx>120</ixx>
+          <iyy>393</iyy>
+          <izz>446</izz>
+        </inertia>
+      </inertial>
+    </link>
+    
+    
+    <!-- Buoyancy plugin
+          Fix buoyancy, it sinks -->
+    <plugin name="vrx::PolyhedraBuoyancyDrag"
+            filename="libPolyhedraBuoyancyDrag.so">
+      <gravity>9.81</gravity>
+      <fluid_density>1000</fluid_density>
+      <fluid_level>-0.3</fluid_level>
+      <linear_drag>120.0</linear_drag>
+      <angular_drag>20.0</angular_drag>
+      <buoyancy name="collision_outer">
+        <link_name>link</link_name>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>2 1.5 1</size>
+          </box>
+        </geometry>
+      </buoyancy>
+      <wavefield>
+        <topic>/vrx/wavefield/parameters</topic>
+      </wavefield>
+    </plugin>
+  </model>
+</sdf>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="catamaran">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://catamaran_description/models/catamaran/mesh/catamaran.dae" scale="1 1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://catamaran_description/models/catamaran/mesh/catamaran.dae" scale="1 1 1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="180.0"/>
+      <origin xyz="0 0 0" rpy="${-pi/2} 0 0"/> 
+      <inertia ixx="120.0" ixy="0.0" ixz="0.0" iyy="393" iyz="0.0" izz="446.0"/>
+    </inertial>
+  </link>
+</robot>
+
