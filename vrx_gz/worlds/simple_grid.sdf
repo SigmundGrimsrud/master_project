@@ -12,7 +12,7 @@
 
     <include>
       <name>solar_grid</name>
-      <pose>0.75 23.5 -2.2 0 0 0</pose>
+      <pose>0.75 3.5 -2.2 0 0 0</pose>
       <uri>package://solar_grid/models/grid</uri>
     </include>
 

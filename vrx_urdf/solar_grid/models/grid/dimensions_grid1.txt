@@ -1,0 +1,18 @@
+Panel
+- x	0.43
+- y	0.35
+- z	0.29
+
+Grid
+- x	5.20
+- y	0.67
+- z	4.78
+
+panel to panel = 0.955
+next row = 1.27
+
+x = length of sepperator
+x panel to panle = 4.78
+y is height
+z is depth of panel to panel
+

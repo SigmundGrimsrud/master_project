@@ -7,7 +7,10 @@
         <geometry>
           <mesh>
             <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
-            <scale>1 1 1</scale>
+            <!-- Outside = 1.2 -->
+            <!--scale>0.72 0.72 0.72</scale-->
+            <!-- Inside = 1.1 -->
+            <scale>0.866 0.866 0.866</scale>
           </mesh>
         </geometry>
         <material>
@@ -22,7 +25,7 @@
         <geometry>
           <mesh>
             <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
-            <scale>1 1 1</scale>
+            <scale>0.866 0.866 0.866</scale>
           </mesh>
         </geometry>
       </collision>
@@ -42,17 +45,16 @@
           Fix buoyancy, it sinks -->
     <plugin name="vrx::PolyhedraBuoyancyDrag"
             filename="libPolyhedraBuoyancyDrag.so">
-      <gravity>9.81</gravity>
       <fluid_density>1000</fluid_density>
       <fluid_level>-0.3</fluid_level>
       <linear_drag>120.0</linear_drag>
       <angular_drag>20.0</angular_drag>
       <buoyancy name="collision_outer">
-        <link_name>link</link_name>
+        <link_name>base_link</link_name>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
           <box>
-            <size>2 1.5 1</size>
+            <size>1.2 2 1</size>
           </box>
         </geometry>
       </buoyancy>
