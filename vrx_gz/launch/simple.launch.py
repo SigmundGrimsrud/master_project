@@ -84,7 +84,7 @@ def generate_launch_description():
             description='YAML configuration file to spawn'),
         DeclareLaunchArgument(
             'robot',
-            default_value="", #'project://catamaran_description/models/catamaran/mesh/catamaran.dae',
+            default_value="", #'project://catamaran_description/models/catamaran',
             description='Name of robot to spawn if specified. '
                         'This must match one of the robots in the config_file'),
         DeclareLaunchArgument(
