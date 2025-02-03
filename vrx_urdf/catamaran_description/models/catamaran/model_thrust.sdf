@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<sdf version="1.9">
+  <model name="catamaran">
+  
+    <link name="base_link">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
+            <!-- Outside = 1.2 -->
+            <!--scale>0.72 0.72 0.72</scale-->
+            <!-- Inside = 1.1     Outside = 1.4 -->
+            <scale>0.866 0.866 0.866</scale>
+          </mesh>
+        </geometry>
+        <!--material>
+          <script>
+            <uri>package://catamaran_description/models/catamaran/mesh/Untitled.001.png</uri>
+            <name>Untitled.001</name>
+          </script>
+        </material-->
+      </visual>
+      
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
+            <scale>0.866 0.866 0.866</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      
+      <inertial>
+        <mass>180</mass> <!-- kg -->
+        <inertia>
+          <ixx>120</ixx>
+          <iyy>393</iyy>
+          <izz>446</izz>
+        </inertia>
+      </inertial>
+    </link>
+    
+    
+    <!-- Buoyancy plugin
+          Fix buoyancy, it sinks -->
+    <plugin name="vrx::PolyhedraBuoyancyDrag"
+            filename="libPolyhedraBuoyancyDrag.so">
+      <fluid_density>1000</fluid_density>
+      <fluid_level>-0.3</fluid_level>
+      <linear_drag>120.0</linear_drag>
+      <angular_drag>20.0</angular_drag>
+      <buoyancy name="collision_outer">
+        <link_name>base_link</link_name>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>1.2 2 1</size>
+          </box>
+        </geometry>
+      </buoyancy>
+      <wavefield>
+        <topic>/vrx/wavefield/parameters</topic>
+      </wavefield>
+    </plugin>
+
+
+    <!-- Left rear thruster -->
+    <link name="thruster_link_rl">
+      <visual>
+        <geometry>
+          <mesh filename="package://wamv_description/mesh/propeller.dae"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <mass>1</mass>
+      </inertial>
+    </link>
+    <joint name="thruster_joint_rl" type="fixed">
+      <parent>base_link</parent>
+      <child>thruster_link_lr</child>
+      <pose>-0.625 -0.71 -0.3 0 0 0</pose>
+    </joint>
+    <plugin filename="libignition-gazebo-thruster-system.so"
+            name="ignition::gazebo::systems::Thruster">
+      <link_name>thruster_link_rl</link_name>
+      <joint_name>thruster_joint_rl</joint_name>
+      <!-- Thrust direction (Y-axis) -->
+      <direction>0 1 0</direction>
+      <!-- Max thrust force (Newtons) -->
+      <max_thrust>500</max_thrust>
+      <!-- Command topic -->
+      <command_topic>/catamaran/thruster/rear_left</command_topic>
+    </plugin>
+
+    <!-- Right rear thruster -->
+    <link name="thruster_link_rr">
+      <visual>
+        <geometry>
+          <mesh filename="package://wamv_description/mesh/propeller.dae"/>
+        </geometry>
+      </visual>
+      <inertial>
+        <mass>1</mass>
+      </inertial>
+    </link>
+    <joint name="thruster_joint_rr" type="fixed">
+      <parent>base_link</parent>
+      <child>thruster_link_rr</child>
+      <pose>0.625 -0.71 -0.3 0 0 0</pose>
+    </joint>
+    <plugin filename="libignition-gazebo-thruster-system.so"
+            name="ignition::gazebo::systems::Thruster">
+      <link_name>thruster_link_rr</link_name>
+      <joint_name>thruster_joint_rr</joint_name>
+      <!-- Thrust direction (Y-axis) -->
+      <direction>0 1 0</direction>
+      <!-- Max thrust force (Newtons) -->
+      <max_thrust>500</max_thrust>
+      <!-- Command topic -->
+      <command_topic>/catamaran/thruster/rear_right</command_topic>
+    </plugin>
+
+    <!--link name="${prefix}_propeller_link">
+      <visual>
+        <geometry>
+          <mesh filename="package://wamv_description/mesh/propeller.dae"/>
+        </geometry>
+      </visual>
+      <collision name="${prefix}_propeller_collision">
+        <origin xyz="-0.08 0 0" rpy="0 1.57 0" />
+        <geometry>
+          <cylinder length="0.18" radius="0.24" />
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="0.5"/>
+        <inertia ixx="0.008545" ixy="0.0" ixz="0.0" iyy="0.008545" iyz="0.0" izz="0.0144"/>
+      </inertial>
+    </link-->
+
+  </model>
+</sdf>

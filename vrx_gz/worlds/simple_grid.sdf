@@ -377,6 +377,12 @@
         <link_name>catamaran/base_link</link_name>
         <coeff_vector>.5 .5 .33</coeff_vector>
       </wind_obj>
+
+      <wind_obj>
+        <name>solar_grid</name>
+        <link_name>solar_grid/grid_link</link_name>
+        <coeff_vector>.5 .5 .33</coeff_vector>
+      </wind_obj>
       <!--
       <wind_obj>
         <name>wamv</name>
@@ -386,10 +392,10 @@
       -->
       <!-- Wind -->
       <!---->
-      <wind_direction>240</wind_direction>
+      <wind_direction>130</wind_direction>
       <!-- in degrees -->
-      <wind_mean_velocity>0.0</wind_mean_velocity>
-      <var_wind_gain_constants>0</var_wind_gain_constants>
+      <wind_mean_velocity>10.0</wind_mean_velocity>
+      <var_wind_gain_constants>1</var_wind_gain_constants>
       <var_wind_time_constants>2</var_wind_time_constants>
       <random_seed>10</random_seed>
       <!-- set to zero/empty to randomize -->
