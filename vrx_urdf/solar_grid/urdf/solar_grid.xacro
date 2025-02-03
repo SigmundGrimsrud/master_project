@@ -3,18 +3,18 @@
   <link name="base_link">
     <visual>
       <geometry>
-        <mesh filename="package://solar_grid/models/grid/mesh/solar_grid_cross.dae" scale="1 1 1"/>
+        <mesh filename="package://solar_grid/models/grid/mesh/solar_grid_1.dae" scale="1 1 1"/>
       </geometry>
     </visual>
     <collision>
       <geometry>
-        <mesh filename="package://solar_grid/models/grid/mesh/solar_grid_cross.dae" scale="1 1 1"/>
+        <mesh filename="package://solar_grid/models/grid/mesh/solar_grid_1.dae" scale="1 1 1"/>
       </geometry>
     </collision>
     <inertial>
-      <mass value="180.0"/>
+      <mass value="1000.0"/>
       <origin xyz="0 0 0" rpy="$0 0 0"/> 
-      <inertia ixx="120.0" ixy="0.0" ixz="0.0" iyy="393" iyz="0.0" izz="446.0"/>
+      <inertia ixx="1200.0" ixy="0.0" ixz="0.0" iyy="3930" iyz="0.0" izz="4460.0"/>
     </inertial>
   </link>
 </robot>
