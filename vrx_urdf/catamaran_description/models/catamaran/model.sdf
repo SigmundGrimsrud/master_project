@@ -66,6 +66,7 @@
 
     <!-- Left rear thruster -->
     <link name="thruster_link_rl">
+      <!--
       <visual name="visual_rl">
         <geometry>
           <mesh filename="package://wamv_description/mesh/propeller.dae"/>
@@ -74,6 +75,7 @@
       <inertial>
         <mass>1</mass>
       </inertial>
+      -->
     </link>
     <joint name="thruster_joint_rl" type="fixed">
       <parent>base_link</parent>
@@ -82,7 +84,8 @@
     </joint>
     <plugin filename="libgz-sim-thruster-system.so"
             name="ignition::gazebo::systems::Thruster">
-      <!-- libignition-gazebo-thruster-system.so -->
+      <!-- libignition-gazebo-thruster-system.so
+           libgz-sim-thruster-system.so -->
       <link_name>thruster_link_rl</link_name>
       <joint_name>thruster_joint_rl</joint_name>
       <!-- Thrust direction (Y-axis) -->
