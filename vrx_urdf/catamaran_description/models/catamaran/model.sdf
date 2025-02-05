@@ -94,6 +94,9 @@
     </joint>
 
     <plugin filename="libgz-sim-thruster-system.so" name="gz::sim::systems::Thruster">
+      <!-- libignition-gazebo-thruster-system.so
+      libgz-sim-thruster-system.so
+      gz-sim-thruster-system-->
       <thruster>
         <linkName>thruster_link_rl</linkName>
         <propJointName>thruster_joint_rl</propJointName>
