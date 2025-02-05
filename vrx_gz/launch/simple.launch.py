@@ -84,7 +84,7 @@ def generate_launch_description():
             description='YAML configuration file to spawn'),
         DeclareLaunchArgument(
             'robot',
-            default_value="", #'project://catamaran_description/models/catamaran',
+            default_value="catamaran", #'project://catamaran_description/models/catamaran',
             description='Name of robot to spawn if specified. '
                         'This must match one of the robots in the config_file'),
         DeclareLaunchArgument(
@@ -93,7 +93,7 @@ def generate_launch_description():
             description='True to run simulation headless (no GUI). '),
         DeclareLaunchArgument(
             'urdf',
-            default_value='',	# "~/master/src/vrx/vrx_urdf/catamaran_description/urdf/catamaran.urdf",
+            default_value="~/master/src/vrx/vrx_urdf/catamaran_description/urdf/catamaran.urdf",
             description='URDF file of the wam-v model. '),
         DeclareLaunchArgument(
             'paused',

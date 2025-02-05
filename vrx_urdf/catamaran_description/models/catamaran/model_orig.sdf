@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.9">
-  <model name="catamaran_base">
+  <model name="catamaran_orig">
   
     <link name="base_link">
       <visual name="visual">
