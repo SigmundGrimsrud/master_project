@@ -6,7 +6,7 @@
         <geometry>
           <mesh>
             <!--solar_grid_free.dae or solar_grid_cross.dae-->
-            <uri>mesh/solar_grid_1.dae</uri>
+            <uri>mesh/solar_grid.dae</uri>
             <scale>1 1 1</scale>
             <!--0.4255 from pixel counting cross, a bit to small-->
             <!--scale>0.43 0.43 0.43</scale--> 
@@ -16,18 +16,18 @@
       <collision name="collision">
         <geometry>
           <mesh>
-            <uri>mesh/solar_grid_1.dae</uri>
+            <uri>mesh/solar_grid.dae</uri>
             <!--scale>0.43 0.43 0.43</scale> 0.4255 from pixel counting cross, a bit to small-->
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
       </collision>
       <inertial>
-        <mass>1000</mass> <!-- kg -->
+        <mass>2000</mass> <!-- kg -->
         <inertia>
-          <ixx>1200</ixx>
-          <iyy>3930</iyy>
-          <izz>4460</izz>
+          <ixx>12000</ixx>
+          <iyy>39300</iyy>
+          <izz>44600</izz>
         </inertia>
       </inertial>
     </link>
@@ -37,15 +37,15 @@
     <plugin name="vrx::PolyhedraBuoyancyDrag"
             filename="libPolyhedraBuoyancyDrag.so">
       <fluid_density>1000</fluid_density>
-      <fluid_level>-0.5</fluid_level>
+      <fluid_level>0.4</fluid_level>
       <linear_drag>125.0</linear_drag>
       <angular_drag>20.0</angular_drag>
-      <buoyancy name="collision_outer">
+      <buoyancy name="grid_buoyancy">
         <link_name>grid_link</link_name>
-        <pose>0 0 0.58 0 0 0</pose>
+        <pose>0 0 0.0 0 0 0</pose>
         <geometry>
           <box>
-            <size>5 5 2</size>
+            <size>23 22 0.6</size>
           </box>
         </geometry>
       </buoyancy>
@@ -56,4 +56,3 @@
   
   </model>
 </sdf>
-
