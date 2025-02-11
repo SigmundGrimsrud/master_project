@@ -96,36 +96,36 @@
       <pose>-0.625 -0.71 -0.3 0 0 0</pose>
     </joint>
 
-    <plugin filename="libgz-sim-thruster-system.so" name="gz::sim::systems::Thruster">
-      <!-- libignition-gazebo-thruster-system.so
-      libgz-sim-thruster-system.so
-      gz-sim-thruster-system-->
-      <thruster>
-        <linkName>thruster_link_rl</linkName>
-        <propJointName>thruster_joint_rl</propJointName>
-        <engineJointName>base_link</engineJointName>
-        <cmdTopic>/catamaran/thrusters/rear_left</cmdTopic>
-        <angleTopic>left_thrust_angle</angleTopic>
-        <enableAngle>false</enableAngle>
-        <mappingType>1</mappingType>  <!-- 0: linear, 1: GLF nonlinear -->
-        <maxCmd>1.0</maxCmd>
-        <maxForceFwd>250.0</maxForceFwd>
-        <maxForceRev>-100.0</maxForceRev>
-        <maxAngle>1.57</maxAngle>
-      </thruster>
-      <thruster>
-        <linkName>thruster_link_rr</linkName>
-        <propJointName>thruster_joint_rr</propJointName>
-        <engineJointName>base_link</engineJointName>
-        <cmdTopic>/catamaran/thrusters/rear_right</cmdTopic>
-        <angleTopic>right_thrust_angle</angleTopic>
-        <enableAngle>false</enableAngle>
-        <mappingType>1</mappingType>
-        <maxCmd>1.0</maxCmd>
-        <maxForceFwd>250.0</maxForceFwd>
-        <maxForceRev>-100.0</maxForceRev>
-        <maxAngle>1.57</maxAngle>
-      </thruster>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>thruster_link_rl</joint_name>
+      <thrust_coefficient>0.004422</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <!-- max total thrust / 2 -->
+      <max_thrust_cmd>2353.53383667818</max_thrust_cmd>
+      <namespace>catamaran</namespace>
+      <topic>/catamaran/thrusters/rear_left</topic>
+      <!-- Not used by Gazebo but used to run the bridge easily -->
+      <name>left</name>
     </plugin>
+        <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>thruster_link_rr</joint_name>
+      <thrust_coefficient>0.004422</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <!-- max total thrust / 2 -->
+      <max_thrust_cmd>2353.53383667818</max_thrust_cmd>
+      <namespace>catamaran</namespace>
+      <topic>/catamaran/thrusters/rear_right</topic>
+      <!-- Not used by Gazebo but used to run the bridge easily -->
+      <name>left</name>
+    </plugin>
+
+
+
+
+
   </model>
 </sdf>
