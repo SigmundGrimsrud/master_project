@@ -7,10 +7,6 @@
         <geometry>
           <mesh>
             <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
-            <!-- Outside = 1.2 -->
-            <!--scale>0.72 0.72 0.72</scale-->
-            <!-- Inside = 1.1 -->
-            <!--<scale>0.866 0.866 0.866</scale>-->
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -26,7 +22,6 @@
         <geometry>
           <mesh>
             <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
-            <!--<scale>0.866 0.866 0.866</scale>-->
             <scale>1 1 1</scale>
           </mesh>
         </geometry>
@@ -42,8 +37,7 @@
       </inertial>
     </link>
     
-    <!-- Buoyancy plugin
-          Fix buoyancy, it sinks -->
+    <!-- Buoyancy plugin -->
     <plugin name="vrx::PolyhedraBuoyancyDrag"
             filename="libPolyhedraBuoyancyDrag.so">
       <fluid_density>1000</fluid_density>
@@ -66,49 +60,45 @@
 
     <enable_wind>true</enable_wind>
 
-
-    <!-- Attempt to add rear joints and thrusters -->
-    <!-- Thruster rear right -->
-    <!--link name="thruster_link_rr"-->
-      <!--visual name="visual_rr">
-        <geometry>
-          <mesh filename="package://wamv_description/models/propeller/mesh/propeller.dae"/>
-        </geometry>
-      </visual-->
-      <!--inertial>
-        <mass>1</mass>
+    <!-- Thrusters left
+    **********************
+    **********************
+    **********************
+    **********************
+    -->
+    <joint name='catamaran/left_chassis_engine_joint' type='revolute'>
+      <pose relative_to='base_link'>-2.9 -3.2 -0.2 0 0 1.57</pose>
+      <parent>base_link</parent>
+      <child>catamaran/left_engine_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='catamaran/left_engine_link'>
+      <pose relative_to='catamaran/left_chassis_engine_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>15</mass>
+        <inertia>
+          <ixx>0.88924499999999995</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.91112499999999996</iyy>
+          <iyz>0</iyz>
+          <izz>0.078125</izz>
+        </inertia>
       </inertial>
-    </link>
-    <joint name="thruster_joint_rr" type="fixed">
-      <parent>base_link</parent>
-      <child>thruster_link_rr</child>
-      <pose>0.625 -0.71 -0.3 0 0 0</pose>
-    </joint-->
-
-    <!-- Left rear thruster -->
-    <!--link name="thruster_link_rl"-->
-      <!--visual name="visual_rl">
-        <geometry>
-          <mesh filename="package://wamv_description/models/propeller/mesh/propeller.dae"/>
-        </geometry>
-      </visual-->
-    <!--/link>
-    <joint name="thruster_joint_rl" type="fixed">
-      <parent>base_link</parent>
-      <child>thruster_link_rl</child>
-      <pose>-0.625 -0.71 -0.3 0 0 0</pose>
-    </joint-->
-
-    <link name="catamaran/left_engine_link">
-      <visual name="left_engine_visual">
-        <geometry>
-          <mesh>
-            <uri>package://wamv_description/models/engine/mesh/engine.dae"</uri>
-            <scale>1 1 1</scale>
-          </mesh>
-        </geometry>
-      </visual>
-      <collision name="left_engine_vertical_axis_collision">
+      <collision name='catamaran/left_engine_link_fixed_joint_lump__left_engine_vertical_axis_collision_collision'>
         <pose>-0.16 0 -0.24 0 0 0</pose>
         <geometry>
           <box>
@@ -116,7 +106,7 @@
           </box>
         </geometry>
       </collision>
-      <collision name="left_engine_rear_end_collision">
+      <collision name='catamaran/left_engine_link_fixed_joint_lump__left_engine_rear_end_collision_collision_1'>
         <pose>-0.34 0 0.12 0 0 0</pose>
         <geometry>
           <box>
@@ -124,110 +114,82 @@
           </box>
         </geometry>
       </collision>
-      <inertial>
-        <mass>15</mass>
-        <inertia>
-          <ixx>0.889245</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.911125</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.078125</izz>
-        </inertia>
-      </inertial>
-    </link>
-    <link name="catamaran/left_propeller_link">
-      <visual name="left_propeller_visual">
+      <visual name='catamaran/left_engine_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
         <geometry>
           <mesh>
-            <uri>package://wamv_description/models/propeller/mesh/propeller.dae</uri>
             <scale>1 1 1</scale>
+            <uri>model://wamv_description/models/engine/mesh/engine.dae</uri>
           </mesh>
         </geometry>
       </visual>
-      <collision name="left_propeller_collision">
-        <pose>-0.08 0 0 0 1.57 0</pose>
-        <geometry>
-          <cylinder>
-            <length>0.18</length>
-            <radius>0.24</radius>
-          </cylinder>
-        </geometry>
-      </collision>
-      <inertial>
-        <mass>0.5</mass>
-        <inertia>
-          <ixx>0.008545</ixx>
-          <ixy>0.0</ixy>
-          <ixz>0.0</ixz>
-          <iyy>0.008545</iyy>
-          <iyz>0.0</iyz>
-          <izz>0.0144</izz>
-        </inertia>
-      </inertial>
     </link>
-    <joint name="catamaran/left_chassis_engine_joint" type="revolute">
-      <axis>
-        <xyz>0 0 1</xyz>
-        <limit>
-          <effort>10</effort>
-          <lower>-3.141592653589793</lower>
-          <upper>3.141592653589793</upper>
-          <velocity>10</velocity>
-        </limit>
-      </axis>
-      <pose>-2.373776 1.027135 0.318237 0.0 0.0 0.0</pose>
-      <parent>base_link</parent>
-      <child>catamaran/left_engine_link</child>
-    </joint>
-
-    <joint name="catamaran/left_engine_propeller_joint" type="continuous">
+    <joint name='catamaran/left_engine_propeller_joint' type='revolute'>
+      <pose relative_to='catamaran/left_engine_link'>-0.278156 0 -0.509371 0 0 0</pose>
+      <parent>catamaran/left_engine_link</parent>
+      <child>catamaran/left_propeller_link</child>
       <axis>
         <xyz>1 0 0</xyz>
         <limit>
           <effort>100</effort>
           <velocity>100</velocity>
+          <lower>-10000000000000000</lower>
+          <upper>10000000000000000</upper>
         </limit>
-        <dynamics> 
-          <damping>0.05</damping>
-          <friction>0.05</friction>
+        <dynamics>
+          <damping>0.050000000000000003</damping>
+          <friction>0.050000000000000003</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
         </dynamics>
       </axis>
-      <parent>catamaran/left_engine_link</parent>
-      <child>catamaran/left_propeller_link</child>
-      <pose>-0.278156 0 -0.509371 0 0 0</pose>
     </joint>
+    <link name='catamaran/left_propeller_link'>
+      <pose relative_to='catamaran/left_engine_propeller_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0085450000000000005</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0085450000000000005</iyy>
+          <iyz>0</iyz>
+          <izz>0.0144</izz>
+        </inertia>
+      </inertial>
+      <collision name='catamaran/left_propeller_link_fixed_joint_lump__left_propeller_collision_collision'>
+        <pose>-0.08 0 0 0 1.570796326794897 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.17999999999999999</length>
+            <radius>0.23999999999999999</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='catamaran/left_propeller_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wamv_description/models/propeller/mesh/propeller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
 
 
-    <!-- Plugin works?, passed first check -->
-
-    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
-      <joint_name>thruster_link_rl</joint_name>
+    <!-- Thruster left -->
+    <plugin name='gz::sim::systems::Thruster' filename='gz-sim-thruster-system'>
+      <joint_name>catamaran/left_engine_propeller_joint</joint_name>
       <thrust_coefficient>0.004422</thrust_coefficient>
       <fluid_density>1000</fluid_density>
       <propeller_diameter>0.2</propeller_diameter>
       <velocity_control>true</velocity_control>
-      <!-- max total thrust / 2 -->
       <max_thrust_cmd>2353.53383667818</max_thrust_cmd>
       <namespace>catamaran</namespace>
       <topic>/catamaran/thrusters/rear_left</topic>
-      <!-- Not used by Gazebo but used to run the bridge easily -->
       <name>left</name>
     </plugin>
-
-    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
-      <joint_name>thruster_link_rr</joint_name>
-      <thrust_coefficient>0.004422</thrust_coefficient>
-      <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <velocity_control>true</velocity_control>
-      <!-- max total thrust / 2 -->
-      <max_thrust_cmd>2353.53383667818</max_thrust_cmd>
-      <namespace>catamaran</namespace>
-      <topic>/catamaran/thrusters/rear_right</topic>
-      <!-- Not used by Gazebo but used to run the bridge easily -->
-      <name>left</name>
-    </plugin>
-
   </model>
 </sdf>

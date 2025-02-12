@@ -1,8 +1,0 @@
-Catamaran
-- x	1.66
-- y	1.64
-- z	0.41
-
-Inside
-- x	1.27
-

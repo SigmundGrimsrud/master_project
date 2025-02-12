@@ -234,6 +234,33 @@ def competition_bridges(world_name, competition_mode=False):
     ))
     return nodes
 
+def catamaran_bridges(world_name, models):
+    bridges = [
+        vrx_gz.bridges.clock(),
+        vrx_gz.bridges.task_info(),
+        vrx_gz.bridges.usv_wind_speed(),
+        vrx_gz.bridges.usv_wind_direction(),
+    ]
+    nodes = []
+
+    for model in models:
+        payload = model.payload_bridges(world_name)
+        payload_bridges = payload[0]
+        payload_nodes = payload[1]
+        payload_launches = payload[2]
+
+        bridges.extend(payload_bridges)
+        nodes.extend(payload_nodes)
+
+        nodes.append(Node(
+            package='ros_gz_bridge',
+            executable='parameter_bridge',
+            output='screen',
+            arguments=[bridge.argument() for bridge in bridges],
+            remappings=[bridge.remapping() for bridge in bridges],
+        ))
+    return nodes
+
 
 def spawn(sim_mode, world_name, models, robot=None):
     if type(models) != list:
