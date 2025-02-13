@@ -54,7 +54,7 @@ def launch(context, *args, **kwargs):
     world_name_base = os.path.basename(world_name)
     launch_processes.extend(vrx_gz.launch.spawn(sim_mode, world_name_base, models, robot))
     
-    launch_processes.extend(vrx_gz.launch.catamaran_bridges(world_name, models))
+    launch_processes.extend(vrx_gz.launch.catamaran_bridges())
 
     if (sim_mode == 'bridge' or sim_mode == 'full') and bridge_competition_topics:
         launch_processes.extend(vrx_gz.launch.competition_bridges(world_name_base, competition_mode))
