@@ -243,6 +243,7 @@ def catamaran_bridges(world_name=None, models=None):
             vrx_gz.bridges.usv_wind_speed(),
             vrx_gz.bridges.usv_wind_direction(),
             vrx_gz.payload_bridges.catamaran_thrust_rear_left(),
+            vrx_gz.payload_bridges.catamaran_thrust_rear_right(),
         ]
         nodes = [Node(
             package='ros_gz_bridge',
