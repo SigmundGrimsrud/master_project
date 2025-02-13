@@ -196,5 +196,142 @@
       <topic>thrusters/rear_left</topic>
       <name>rear_left</name>
     </plugin>
+
+    <!-- Thrusters right
+    **********************
+    **********************
+    **********************
+    **********************
+    -->
+    <joint name='catamaran/right_chassis_engine_joint' type='fixed'>
+      <pose relative_to='base_link'>2.9 -3.15 -0.2 0 0 1.57</pose>
+      <parent>base_link</parent>
+      <child>catamaran/right_engine_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='catamaran/right_engine_link'>
+      <pose relative_to='catamaran/right_chassis_engine_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>15</mass>
+        <inertia>
+          <ixx>0.88925</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.911125</iyy>
+          <iyz>0</iyz>
+          <izz>0.078125</izz>
+        </inertia>
+      </inertial>
+      <collision name='catamaran/right_engine_link_fixed_joint_lump__right_engine_vertical_axis_collision_collision'>
+        <pose>-0.16 0 -0.24 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.15 0.83</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='catamaran/right_engine_link_fixed_joint_lump__right_engine_rear_end_collision_collision_1'>
+        <pose>-0.34 0 0.12 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.15 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='catamaran/right_engine_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wamv_description/models/engine/mesh/engine.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='catamaran/right_engine_propeller_joint' type='revolute'>
+      <pose relative_to='catamaran/right_engine_link'>-0.278156 0 -0.509371 0 0 0</pose>
+      <parent>catamaran/right_engine_link</parent>
+      <child>catamaran/right_propeller_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-10000</lower>
+          <upper>10000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.05</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='catamaran/right_propeller_link'>
+      <pose relative_to='catamaran/right_engine_propeller_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.008545</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.008545</iyy>
+          <iyz>0</iyz>
+          <izz>0.0144</izz>
+        </inertia>
+      </inertial>
+      <collision name='catamaran/right_propeller_link_fixed_joint_lump__right_propeller_collision_collision'>
+        <pose>-0.08 0 0 0 1.570796326794897 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.24</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='catamaran/right_propeller_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://wamv_description/models/propeller/mesh/propeller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <!-- Thruster right -->
+    <plugin name='gz::sim::systems::Thruster' filename='gz-sim-thruster-system'>
+      <joint_name>catamaran/right_engine_propeller_joint</joint_name>
+      <thrust_coefficient>0.004422</thrust_coefficient>
+      <thrust_direction>0 1 0</thrust_direction>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>2353.53383667818</max_thrust_cmd>
+      <!-- Naming for thrust topics. Results in:
+            /catamaran/thrusters/rear_right
+            /catamaran/thrusters/rear_right/ang_vel
+      -->
+      <namespace>catamaran</namespace>
+      <topic>thrusters/rear_right</topic>
+      <name>rear_right</name>
+    </plugin>
   </model>
 </sdf>
