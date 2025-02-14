@@ -100,7 +100,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://vrx_gazebo/models/sensor_post/mesh/sensor_post_arm.dae</uri>
+            <uri>model://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -616,7 +616,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://gps/mesh/gps.dae</uri>
+            <uri>model://sensors/gps/mesh/gps.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -759,6 +759,118 @@
       </sensor>
     </link>
 
+    <!-- 3D LIDAR -->
+    <joint name='catamaran/3d_lidar_catamaran_joint' type='fixed'>
+      <pose relative_to='base_link'>0.69512894146639759 0 1.7653406175940449 0 0.13962634015954645 0</pose>
+      <parent>base_link</parent>
+      <child>catamaran/3d_lidar_catamaran_link</child>
+    </joint>
+    <link name='catamaran/3d_lidar_catamaran_link'>
+    <pose relative_to='catamaran/3d_lidar_catamaran_joint'>0 0 0 0 0 0</pose>
+    <collision name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_post_collision_collision_33'>
+        <pose>0.62999999999999989 0 1.52325 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.45350000000000013</length>
+            <radius>0.0076</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_post_arm_collision_collision_34'>
+        <pose>0.65999999999999992 0 1.75 -1.2042771838760871 5.5511151231257827e-17 -1.570796326794897</pose>
+        <geometry>
+          <cylinder>
+            <length>0.065000000000000002</length>
+            <radius>0.0080000000000000002</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_collision_collision_35'>
+        <pose>0.69999999999999996 0 1.8 0 0.13962634015954645 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.074999999999999997</length>
+            <radius>0.055</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      
+      <visual name='catamaran/base_link_fixed_joint_lump__catamaran/lidar_catamaran_post_link_visual_7'>
+        <pose>0.62999999999999989 0 1.52325 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.45350000000000013</length>
+            <radius>0.0076</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <ambient>0 0 0 1</ambient>
+        </material>
+      </visual>
+      <visual name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_post_arm_visual_visual_8'>
+        <pose>0.62199999999999989 0 1.7470000000000001 -1.0471975511965981 5.5511151231257827e-17 -1.570796326794897</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name='catamaran/base_link_fixed_joint_lump__catamaran/lidar_catamaran_link_visual_9'>
+        <pose>0.69512894146639759 0 1.7653406175940449 0 0.13962634015954645 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://sensors/3d_lidar/mesh/3d_lidar.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>1 1 1 1</diffuse>
+          <specular>1 1 1 1</specular>
+          <pbr>
+            <metal>
+              <albedo_map>model://sensors/3d_lidar/mesh/3d_Lidar_Albedo.png</albedo_map>
+              <normal_map>model://sensors/3d_lidar/mesh/3d_Lidar_Normal.png</normal_map>
+              <roughness_map>model://sensors/3d_lidar/mesh/3d_Lidar_Roughness.png</roughness_map>
+              <metalness_map>model://sensors/3d_lidar/mesh/3d_Lidar_Metalness.png</metalness_map>
+            </metal>
+          </pbr>
+        </material>
+      </visual>
+      
+      <sensor name='lidar_catamaran_sensor' type='gpu_ray'>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>1875</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.1415926535897931</min_angle>
+              <max_angle>3.1415926535897931</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>16</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.26179938779914941</min_angle>
+              <max_angle>0.26179938779914941</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.10000000000000001</min>
+            <max>130</max>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <pose>0.69999999999999996 0 1.8 0 0.139626 0</pose>
+      </sensor>
+    </link>
+
+
     <plugin name='gz::sim::systems::PosePublisher' filename='libgz-sim-pose-publisher-system.so'>
       <publish_link_pose>false</publish_link_pose>
       <publish_sensor_pose>true</publish_sensor_pose>
@@ -771,6 +883,25 @@
       <static_update_frequency>1</static_update_frequency>
     </plugin>
     <plugin name='gz::sim::systems::JointStatePublisher' filename='gz-sim-joint-state-publisher-system'/>
+
+    <frame name='catamaran/lidar_catamaran_post_arm_to_lidar_catamaran_joint' attached_to='catamaran/lidar_catamaran_post_arm_link'>
+      <pose>0.040000000000000001 0 0.050000000000000003 0 0.13962634015954656 0</pose>
+    </frame>
+    <frame name='catamaran/lidar_catamaran_link' attached_to='catamaran/lidar_catamaran_post_arm_to_lidar_catamaran_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='catamaran/lidar_catamaran_post_to_lidar_catamaran_post_arm_joint' attached_to='catamaran/lidar_catamaran_post_link'>
+      <pose>0.029999999999999999 0 0.22675000000000009 0 0 0</pose>
+    </frame>
+    <frame name='catamaran/lidar_catamaran_post_arm_link' attached_to='catamaran/lidar_catamaran_post_to_lidar_catamaran_post_arm_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='catamaran/base_to_lidar_catamaran_post_joint' attached_to='base_link'>
+      <pose>0.62999999999999989 0 1.52325 0 0 0</pose>
+    </frame>
+    <frame name='catamaran/lidar_catamaran_post_link' attached_to='catamaran/base_to_lidar_catamaran_post_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
     
     <frame name='catamaran/front_left_camera_to_front_left_camera_link_optical_joint' attached_to='catamaran/front_left_camera_link_frame'>
       <pose>0 0 0 -1.5707963267948959 -5.5511151231257827e-17 -1.5707963267948959</pose>
