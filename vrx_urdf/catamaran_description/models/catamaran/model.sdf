@@ -38,7 +38,7 @@
     </link>
 
     <joint name="catamaran/front_left_camera_joint" type="fixed">
-      <pose relative_to='base_link'>0 0 0 0 0 0</pose>
+      <pose relative_to='base_link'>-2.85 1.25 -1.05 0 0 1.570796326794897</pose> <!-- Original sensor = 0.75 0.1 1.5 0 0.261799 0 -->
       <parent>base_link</parent>
       <child>catamaran/front_left_camera_link</child>
       <pose>0 0 0 0 0 0</pose>
@@ -47,7 +47,7 @@
       <pose relative_to='catamaran/front_left_camera_joint'>0 0 0 0 0 0</pose>
       <!-- Cameras -->
       <collision name='catamaran/base_link_fixed_joint_lump__front_left_camera_post_collision_collision_25'>
-        <pose>0.69999999999999996 0.10000000000000001 1.3847499999999999 0 0 0</pose>
+        <pose>0.7 0.1 1.38475 0 0 0</pose>
         <geometry>
           <cylinder>
             <length>0.17649999999999999</length>
@@ -56,7 +56,7 @@
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__front_left_camera_post_arm_collision_collision_26'>
-        <pose>0.72999999999999998 0.10000000000000001 1.4730000000000001 -1.2042771838760871 5.5511151231257827e-17 -1.570796326794897</pose>
+        <pose>0.73 0.1 1.4730000000000001 -1.2042771838760871 0 -1.570796326794897</pose>
         <geometry>
           <cylinder>
             <length>0.065000000000000002</length>
@@ -65,28 +65,28 @@
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__front_left_camera_lens_collision_collision_27'>
-        <pose>0.76738666487320317 0.10000000000000001 1.495341257188155 3.1415926535897931 1.3089969389957472 3.1415926535897931</pose>
+        <pose>0.76738666487320317 0.1 1.495341257188155 3.1415926535897931 1.3089969389957472 3.1415926535897931</pose>
         <geometry>
           <cylinder>
-            <length>0.042000000000000003</length>
-            <radius>0.014999999999999999</radius>
+            <length>0.042</length>
+            <radius>0.015</radius>
           </cylinder>
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__front_left_camera_box_collision_collision_28'>
-        <pose>0.73019852056107404 0.10000000000000001 1.5053057904246021 0 0.26179938779914941 0</pose>
+        <pose>0.73019852056107404 0.1 1.5053057904246021 0 0.26179938779914941 0</pose>
         <geometry>
           <box>
-            <size>0.035999999999999997 0.029999999999999999 0.029999999999999999</size>
+            <size>0.036 0.03 0.03</size>
           </box>
         </geometry>
       </collision>
 
       <visual name='catamaran/base_link_fixed_joint_lump__catamaran/front_left_camera_post_link_visual_1'>
-        <pose>0.69999999999999996 0.10000000000000001 1.3847499999999999 0 0 0</pose>
+        <pose>0.7 0.1 1.38475 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.17649999999999999</length>
+            <length>0.1765</length>
             <radius>0.0076</radius>
           </cylinder>
         </geometry>
@@ -96,7 +96,7 @@
         </material>
       </visual>
       <visual name='catamaran/base_link_fixed_joint_lump__front_left_camera_post_arm_visual_visual_2'>
-        <pose>0.69199999999999995 0.10000000000000001 1.47 -1.0471975511965981 5.5511151231257827e-17 -1.570796326794897</pose>
+        <pose>0.692 0.1 1.47 -1.0471975511965981 0 -1.570796326794897</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -105,7 +105,7 @@
         </geometry>
       </visual>
       <visual name='catamaran/base_link_fixed_joint_lump__catamaran/front_left_camera_link_visual_3'>
-        <pose>0.71812444773246065 0.10000000000000001 1.5085410284883829 0.26179938779914941 2.7755575615628914e-17 1.570796326794897</pose>
+        <pose>0.71812444773246065 0.1 1.5085410284883829 0.26179938779914941 0 1.570796326794897</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -136,23 +136,23 @@
             <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.050000000000000003</near>
+            <near>0.05</near>
             <far>400</far>
           </clip>
           <noise>
             <type>gaussian</type>
             <mean>0</mean>
-            <stddev>0.0070000000000000001</stddev>
+            <stddev>0.007</stddev>
           </noise>
         </camera>
-        <pose>0.75 0.10000000000000001 1.5 0 0.261799 0</pose>
+        <pose>0.75 0.1 1.5 0 0.261799 0</pose>
       </sensor>
     </link>
 
 
 
     <joint name="catamaran/front_right_camera_joint" type="fixed">
-      <pose relative_to='base_link'>0 0 0 0 0 0</pose>
+      <pose relative_to='base_link'>2.85 1.25 -1.05 0 0 1.570796326794897</pose>
       <parent>base_link</parent>
       <child>catamaran/front_right_camera_link</child>
       <pose>0 0 0 0 0 0</pose>
@@ -161,46 +161,46 @@
       <pose relative_to='catamaran/front_right_camera_joint'>0 0 0 0 0 0</pose>
 
       <collision name='catamaran/base_link_fixed_joint_lump__front_right_camera_post_collision_collision_29'>
-        <pose>0.69999999999999996 -0.10000000000000001 1.3847499999999999 0 0 0</pose>
+        <pose>0.7 -0.1 1.38475 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.17649999999999999</length>
+            <length>0.1765</length>
             <radius>0.0076</radius>
           </cylinder>
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__front_right_camera_post_arm_collision_collision_30'>
-        <pose>0.72999999999999998 -0.10000000000000001 1.4730000000000001 -1.2042771838760871 5.5511151231257827e-17 -1.570796326794897</pose>
+        <pose>0.73 -0.1 1.473 -1.2042771838760871 0 -1.570796326794897</pose>
         <geometry>
           <cylinder>
-            <length>0.065000000000000002</length>
-            <radius>0.0080000000000000002</radius>
+            <length>0.065</length>
+            <radius>0.008</radius>
           </cylinder>
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__front_right_camera_lens_collision_collision_31'>
-        <pose>0.76738666487320317 -0.10000000000000001 1.495341257188155 3.1415926535897931 1.3089969389957472 3.1415926535897931</pose>
+        <pose>0.76738666487320317 -0.1 1.495341257188155 3.1415926535897931 1.3089969389957472 3.1415926535897931</pose>
         <geometry>
           <cylinder>
-            <length>0.042000000000000003</length>
-            <radius>0.014999999999999999</radius>
+            <length>0.042</length>
+            <radius>0.015</radius>
           </cylinder>
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__front_right_camera_box_collision_collision_32'>
-        <pose>0.73019852056107404 -0.10000000000000001 1.5053057904246021 0 0.26179938779914941 0</pose>
+        <pose>0.73019852056107404 -0.1 1.5053057904246021 0 0.26179938779914941 0</pose>
         <geometry>
           <box>
-            <size>0.035999999999999997 0.029999999999999999 0.029999999999999999</size>
+            <size>0.036 0.03 0.03</size>
           </box>
         </geometry>
       </collision>
 
       <visual name='catamaran/base_link_fixed_joint_lump__catamaran/front_right_camera_post_link_visual_4'>
-        <pose>0.69999999999999996 -0.10000000000000001 1.3847499999999999 0 0 0</pose>
+        <pose>0.7 -0.1 1.38475 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.17649999999999999</length>
+            <length>0.1765</length>
             <radius>0.0076</radius>
           </cylinder>
         </geometry>
@@ -210,7 +210,7 @@
         </material>
       </visual>
       <visual name='catamaran/base_link_fixed_joint_lump__front_right_camera_post_arm_visual_visual_5'>
-        <pose>0.69199999999999995 -0.10000000000000001 1.47 -1.0471975511965981 5.5511151231257827e-17 -1.570796326794897</pose>
+        <pose>0.692 -0.1 1.47 -1.0471975511965981 0 -1.570796326794897</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -219,7 +219,7 @@
         </geometry>
       </visual>
       <visual name='catamaran/base_link_fixed_joint_lump__catamaran/front_right_camera_link_visual_6'>
-        <pose>0.71812444773246065 -0.10000000000000001 1.5085410284883829 0.26179938779914941 2.7755575615628914e-17 1.570796326794897</pose>
+        <pose>0.71812444773246065 -0.1 1.5085410284883829 0.26179938779914941 0 1.570796326794897</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -250,16 +250,16 @@
             <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.050000000000000003</near>
+            <near>0.05</near>
             <far>400</far>
           </clip>
           <noise>
             <type>gaussian</type>
             <mean>0</mean>
-            <stddev>0.0070000000000000001</stddev>
+            <stddev>0.007</stddev>
           </noise>
         </camera>
-        <pose>0.75 -0.10000000000000001 1.5 0 0.261799 0</pose>
+        <pose>0.75 -0.1 1.5 0 0.261799 0</pose>
       </sensor>
     </link>
     
@@ -761,14 +761,14 @@
 
     <!-- 3D LIDAR -->
     <joint name='catamaran/3d_lidar_catamaran_joint' type='fixed'>
-      <pose relative_to='base_link'>0.69512894146639759 0 1.7653406175940449 0 0.13962634015954645 0</pose>
+      <pose relative_to='base_link'>0 1.325 -1.05 0 0 1.570796326794897 </pose> <!-- Original = 0.63 0 1.52325 0 0 0 -->
       <parent>base_link</parent>
       <child>catamaran/3d_lidar_catamaran_link</child>
     </joint>
     <link name='catamaran/3d_lidar_catamaran_link'>
     <pose relative_to='catamaran/3d_lidar_catamaran_joint'>0 0 0 0 0 0</pose>
     <collision name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_post_collision_collision_33'>
-        <pose>0.62999999999999989 0 1.52325 0 0 0</pose>
+        <pose>0.63 0 1.52325 0 0 0</pose> <!-- 0 2.8 0.25 0 0 1.570796326794897 -->
         <geometry>
           <cylinder>
             <length>0.45350000000000013</length>
@@ -777,7 +777,7 @@
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_post_arm_collision_collision_34'>
-        <pose>0.65999999999999992 0 1.75 -1.2042771838760871 5.5511151231257827e-17 -1.570796326794897</pose>
+        <pose>0.66 0 1.75 -1.2042771838760871 0 -1.570796326794897</pose>
         <geometry>
           <cylinder>
             <length>0.065000000000000002</length>
@@ -786,20 +786,20 @@
         </geometry>
       </collision>
       <collision name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_collision_collision_35'>
-        <pose>0.69999999999999996 0 1.8 0 0.13962634015954645 0</pose>
+        <pose>0.7 0 1.8 0 0.13962634015954645 0</pose>
         <geometry>
           <cylinder>
-            <length>0.074999999999999997</length>
+            <length>0.075</length>
             <radius>0.055</radius>
           </cylinder>
         </geometry>
       </collision>
       
       <visual name='catamaran/base_link_fixed_joint_lump__catamaran/lidar_catamaran_post_link_visual_7'>
-        <pose>0.62999999999999989 0 1.52325 0 0 0</pose>
+        <pose>0.63 0 1.52325 0 0 0</pose>
         <geometry>
           <cylinder>
-            <length>0.45350000000000013</length>
+            <length>0.4535</length>
             <radius>0.0076</radius>
           </cylinder>
         </geometry>
@@ -809,7 +809,7 @@
         </material>
       </visual>
       <visual name='catamaran/base_link_fixed_joint_lump__lidar_catamaran_post_arm_visual_visual_8'>
-        <pose>0.62199999999999989 0 1.7470000000000001 -1.0471975511965981 5.5511151231257827e-17 -1.570796326794897</pose>
+        <pose>0.622 0 1.747 -1.0471975511965981 0 -1.570796326794897</pose>
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
@@ -885,19 +885,19 @@
     <plugin name='gz::sim::systems::JointStatePublisher' filename='gz-sim-joint-state-publisher-system'/>
 
     <frame name='catamaran/lidar_catamaran_post_arm_to_lidar_catamaran_joint' attached_to='catamaran/lidar_catamaran_post_arm_link'>
-      <pose>0.040000000000000001 0 0.050000000000000003 0 0.13962634015954656 0</pose>
+      <pose>0.04 0 0.05 0 0.13962634015954656 0</pose>
     </frame>
     <frame name='catamaran/lidar_catamaran_link' attached_to='catamaran/lidar_catamaran_post_arm_to_lidar_catamaran_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='catamaran/lidar_catamaran_post_to_lidar_catamaran_post_arm_joint' attached_to='catamaran/lidar_catamaran_post_link'>
-      <pose>0.029999999999999999 0 0.22675000000000009 0 0 0</pose>
+      <pose>0.03 0 0.22675 0 0 0</pose>
     </frame>
     <frame name='catamaran/lidar_catamaran_post_arm_link' attached_to='catamaran/lidar_catamaran_post_to_lidar_catamaran_post_arm_joint'>
       <pose>0 0 0 0 0 0</pose>
     </frame>
     <frame name='catamaran/base_to_lidar_catamaran_post_joint' attached_to='base_link'>
-      <pose>0.62999999999999989 0 1.52325 0 0 0</pose>
+      <pose>0.63 0 1.52325 0 0 0</pose>
     </frame>
     <frame name='catamaran/lidar_catamaran_post_link' attached_to='catamaran/base_to_lidar_catamaran_post_joint'>
       <pose>0 0 0 0 0 0</pose>
