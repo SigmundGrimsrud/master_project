@@ -257,7 +257,7 @@ def catamaran_bridges(world_name=None, models=None):
         return []
 
 
-def spawn(sim_mode, world_name, models, robot=None):
+def spawn(sim_mode: str, world_name: str, models: list[str], robot:str|None = None) -> list:
     if type(models) != list:
         models = [models]
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -298,6 +298,7 @@ def spawn(sim_mode, world_name, models, robot=None):
                 output='screen',
                 arguments=[bridge.argument() for bridge in bridges],
                 remappings=[bridge.remapping() for bridge in bridges],
+                # remappings=[(bridge.remapping()[0], bridge.remapping()[1].replace('/model/catamaran', '')) for bridge in bridges],
             ))
 
             # tf broadcaster (sensors)
@@ -308,16 +309,17 @@ def spawn(sim_mode, world_name, models, robot=None):
             ))
 
             # robot_state_publisher (tf for wamv)
-            model_dir = os.path.join(get_package_share_directory('vrx_gazebo'), 'models/wamv/tmp')
-            urdf_file = os.path.join(model_dir, 'model.urdf')
-            with open(urdf_file, 'r') as infp:
+            # model_dir = os.path.join(get_package_share_directory('vrx_gazebo'), 'models/wamv/tmp')
+            # urdf_file = os.path.join(model_dir, 'model.urdf')
+            sdf_file = model.urdf
+            with open(sdf_file, 'r') as infp:
                 robot_desc = infp.read()
-            params = {'use_sim_time': use_sim_time, 'frame_prefix': 'wamv/', 'robot_description': robot_desc}
+            params = {'use_sim_time': use_sim_time, 'frame_prefix': 'catamaran/', 'robot_description': robot_desc}
             nodes.append(Node(package='robot_state_publisher',
                                   executable='robot_state_publisher',
                                   output='both',
                                   parameters=[params],
-                                  remappings=[('/joint_states', '/wamv/joint_states')]))
+                                  remappings=[('/joint_states', '/catamaran/joint_states')]))
 
             group_action = GroupAction([
                 PushRosNamespace(model.model_name),

@@ -22,7 +22,7 @@ import os
 import vrx_gz.launch
 from vrx_gz.model import Model
 
-
+# Executes the launch
 def launch(context, *args, **kwargs):
     config_file = LaunchConfiguration('config_file').perform(context)
     world_name = LaunchConfiguration('world').perform(context)
@@ -43,26 +43,28 @@ def launch(context, *args, **kwargs):
         with open(config_file, 'r') as stream:
             models = Model.FromConfig(stream)
     else:
-      m = Model('wamv', 'wam-v', [0, 0, 0, 0, 0, 1.57])
+      m = Model('catamaran', 'catamaran', [0, 0, 0, 0, 0, 0])
       if robot_urdf and robot_urdf != '':
           m.set_urdf(robot_urdf)
       models.append(m)
 
+    # Launches the simulation
     world_name, ext = os.path.splitext(world_name)
     launch_processes.extend(vrx_gz.launch.simulation(world_name, headless, 
                                                      gz_paused, extra_gz_args))
+    # Spawns the robot and necessary bridges
     world_name_base = os.path.basename(world_name)
     launch_processes.extend(vrx_gz.launch.spawn(sim_mode, world_name_base, models, robot))
     
     # Bridge catamaran thrusters rear_left and rear_right
     # Found in vrx_gz/srx/vrx_gz launch.py and payload_bridges.py
-    launch_processes.extend(vrx_gz.launch.catamaran_bridges())
+    #launch_processes.extend(vrx_gz.launch.catamaran_bridges())
 
     if (sim_mode == 'bridge' or sim_mode == 'full') and bridge_competition_topics:
         launch_processes.extend(vrx_gz.launch.competition_bridges(world_name_base, competition_mode))
     return launch_processes
 
-
+# Defines runtime parameters
 def generate_launch_description():
     return LaunchDescription([
         # Launch Arguments
@@ -79,7 +81,7 @@ def generate_launch_description():
                         'bridge: launch ros_gz bridges only.'),
         DeclareLaunchArgument(
             'bridge_competition_topics',
-            default_value='True',
+            default_value='False',
             description='True to bridge competition topics, False to disable bridge.'),
         DeclareLaunchArgument(
             'config_file',
@@ -96,8 +98,8 @@ def generate_launch_description():
             description='True to run simulation headless (no GUI). '),
         DeclareLaunchArgument(
             'urdf',
-            default_value="~/master/src/vrx/vrx_urdf/catamaran_description/urdf/catamaran.urdf",
-            description='URDF file of the wam-v model. '),
+            default_value=os.path.expanduser("~/master/src/vrx/vrx_urdf/catamaran_description/models/catamaran/model.sdf"),
+            description='URDF file of the robot model. '),
         DeclareLaunchArgument(
             'paused',
             default_value='False',

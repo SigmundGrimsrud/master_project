@@ -16,14 +16,6 @@
       <uri>package://solar_grid/models/grid</uri>
     </include>
 
-    <include>
-      <name>catamaran</name>
-      <pose>0 0 0.54 0 0 0</pose>
-      <uri>package://catamaran_description/models/catamaran</uri>
-    </include>
-
-
-
     <physics name="4ms" type="dart">
       <max_step_size>0.004</max_step_size>
       <real_time_factor>1.0</real_time_factor>
