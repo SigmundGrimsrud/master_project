@@ -264,7 +264,9 @@ def catamaran_bridges(world_name=None, models=None):
             link_name = f'{pos}_camera_link'
             sensor_name = f'{pos}_camera_sensor'
             bridges.append(vrx_gz.payload_bridges.camera_info(world_name, robot, link_name, sensor_name))
-            bridges.append(vrx_gz.payload_bridges.camera_points(world_name, robot, link_name, sensor_name))
+            # bridges.append(vrx_gz.payload_bridges.camera_points(world_name, robot, link_name, sensor_name))
+            bridges.append(vrx_gz.payload_bridges.image(world_name, robot, link_name, sensor_name))
+            # bridges.append(vrx_gz.payload_bridges.depth_image(world_name, robot, link_name, sensor_name))
 
         nodes = [Node(
             package='ros_gz_bridge',
