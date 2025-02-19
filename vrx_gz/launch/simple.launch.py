@@ -74,7 +74,7 @@ def generate_launch_description():
             description='Name of world'),
         DeclareLaunchArgument(
             'sim_mode',
-            default_value='bridge',
+            default_value='full',
             description='Simulation mode: "full", "sim", "bridge".'
                         'full: spawns robot and launch ros_gz bridges, '
                         'sim: spawns robot only, '
