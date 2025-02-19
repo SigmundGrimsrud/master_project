@@ -1,9 +1,9 @@
-<?xml version="1.0" ?>
-<sdf version="1.9">
-  <model name="catamaran">
+<?xml version='1.0' ?>
+<sdf version='1.9'>
+  <model name='catamaran'>
   
-    <link name="base_link">
-      <visual name="visual">
+    <link name='base_link'>
+      <visual name='visual'>
         <geometry>
           <mesh>
             <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
@@ -18,7 +18,7 @@
         </material>
       </visual>
       
-      <collision name="collision">
+      <collision name='collision'>
         <geometry>
           <mesh>
             <uri>package://catamaran_description/models/catamaran/mesh/catamaran.dae</uri>
@@ -37,13 +37,13 @@
       </inertial>
     </link>
 
-    <joint name="front_left_camera_joint" type="fixed">
+    <joint name='front_left_camera_joint' type='fixed'>
       <pose relative_to='base_link'>-2.85 1.25 -1.05 0 0 1.570796326794897</pose> <!-- Original sensor = 0.75 0.1 1.5 0 0.261799 0 -->
       <parent>base_link</parent>
       <child>front_left_camera_link</child>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <link name="front_left_camera_link">
+    <link name='front_left_camera_link'>
       <pose relative_to='front_left_camera_joint'>0 0 0 0 0 0</pose>
       <!-- Cameras -->
       <collision name='base_link_fixed_joint_lump__front_left_camera_post_collision_collision_25'>
@@ -151,13 +151,13 @@
 
 
 
-    <joint name="front_right_camera_joint" type="fixed">
+    <joint name='front_right_camera_joint' type='fixed'>
       <pose relative_to='base_link'>2.85 1.25 -1.05 0 0 1.570796326794897</pose>
       <parent>base_link</parent>
       <child>front_right_camera_link</child>
       <pose>0 0 0 0 0 0</pose>
     </joint>
-    <link name="front_right_camera_link">
+    <link name='front_right_camera_link'>
       <pose relative_to='front_right_camera_joint'>0 0 0 0 0 0</pose>
       <collision name='base_link_fixed_joint_lump__front_right_camera_post_collision_collision_29'>
         <pose>0.7 -0.1 1.38475 0 0 0</pose>
@@ -263,13 +263,13 @@
     </link>
     
     <!-- Buoyancy plugin -->
-    <plugin name="vrx::PolyhedraBuoyancyDrag"
-            filename="libPolyhedraBuoyancyDrag.so">
+    <plugin name='vrx::PolyhedraBuoyancyDrag'
+            filename='libPolyhedraBuoyancyDrag.so'>
       <fluid_density>1000</fluid_density>
       <fluid_level>0.0</fluid_level>
       <linear_drag>120.0</linear_drag>
       <angular_drag>20.0</angular_drag>
-      <buoyancy name="collision_outer">
+      <buoyancy name='collision_outer'>
         <link_name>base_link</link_name>
         <pose>0 0 0 0 0 0</pose>
         <geometry>
