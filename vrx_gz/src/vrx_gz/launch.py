@@ -237,6 +237,8 @@ def competition_bridges(world_name, competition_mode=False):
 
 def catamaran_bridges(world_name=None, models=None):
     if world_name is None and models is None:
+        world_name = 'simple_grid'
+        robot = 'catamaran'
         bridges = [
             vrx_gz.bridges.clock(),
             vrx_gz.bridges.task_info(),
@@ -244,7 +246,26 @@ def catamaran_bridges(world_name=None, models=None):
             vrx_gz.bridges.usv_wind_direction(),
             vrx_gz.payload_bridges.catamaran_thrust_rear_left(),
             vrx_gz.payload_bridges.catamaran_thrust_rear_right(),
-        ]
+            vrx_gz.payload_bridges.odometry(robot),
+            vrx_gz.payload_bridges.navsat(world_name, robot,
+                                        'gps_catamaran_link', 'navsat'),
+            vrx_gz.payload_bridges.imu(world_name, robot,
+                                    'imu_catamaran_link', 'imu_catamaran_sensor'),
+            ]
+            # vrx_gz.payload_bridges.lidar_scan(world_name, robot,
+            #                                     '3d_lidar_catamaran_link',
+            #                                     'lidar_catamaran_sensor'),
+            # vrx_gz.payload_bridges.lidar_points(world_name, robot,
+            #                                     '3d_lidar_catamaran_link',
+            #                                     'lidar_catamaran_sensor'),
+        # Add camera bridges
+        positions = ['front_left', 'front_right']
+        for pos in positions:
+            link_name = f'{pos}_camera_link'
+            sensor_name = f'{pos}_camera_sensor'
+            bridges.append(vrx_gz.payload_bridges.camera_info(world_name, robot, link_name, sensor_name))
+            bridges.append(vrx_gz.payload_bridges.camera_points(world_name, robot, link_name, sensor_name))
+
         nodes = [Node(
             package='ros_gz_bridge',
             executable='parameter_bridge',
