@@ -142,7 +142,7 @@ def thrust(model_name, side):
         ros_type='std_msgs/msg/Float64',
         direction=BridgeDirection.ROS_TO_GZ)
 
-def catamaran_thrust_rear_left(model_name=None, side=None):
+def catamaran_thrust_rear_left():
     return Bridge(
     	gz_topic=f'/catamaran/thrusters/rear_left',
         ros_topic=f'/catamaran/thrusters/rear_left',
@@ -150,7 +150,7 @@ def catamaran_thrust_rear_left(model_name=None, side=None):
         ros_type='std_msgs/msg/Float64',
         direction=BridgeDirection.ROS_TO_GZ)
 
-def catamaran_thrust_rear_right(model_name=None, side=None):
+def catamaran_thrust_rear_right():
     return Bridge(
     	gz_topic=f'/catamaran/thrusters/rear_right',
         ros_topic=f'/catamaran/thrusters/rear_right',
