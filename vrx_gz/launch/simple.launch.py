@@ -56,13 +56,9 @@ def launch(context, *args, **kwargs):
     world_name_base = os.path.basename(world_name)
     launch_processes.extend(vrx_gz.launch.spawn(sim_mode, world_name_base, models, robot))
     
-    # Bridge catamaran thrusters rear_left and rear_right
-    # Found in vrx_gz/srx/vrx_gz launch.py and payload_bridges.py
-    # launch_processes.extend(vrx_gz.launch.catamaran_bridges())
-
-    # if (sim_mode == 'bridge' or sim_mode == 'full') and bridge_competition_topics:
-    #     launch_processes.extend(vrx_gz.launch.competition_bridges(world_name_base, competition_mode))
-    # return launch_processes
+    if (sim_mode == 'bridge' or sim_mode == 'full') and bridge_competition_topics:
+        launch_processes.extend(vrx_gz.launch.competition_bridges(world_name_base, competition_mode))
+    return launch_processes
 
 # Defines runtime parameters
 def generate_launch_description():
