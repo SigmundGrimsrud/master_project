@@ -100,7 +100,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
+            <uri>package://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -109,7 +109,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://vrx_gazebo/models/mono_camera/mesh/mono_camera.dae</uri>
+            <uri>package://vrx_gazebo/models/mono_camera/mesh/mono_camera.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -117,10 +117,10 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <albedo_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
-              <normal_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png</normal_map>
-              <roughness_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
-              <metalness_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
+              <albedo_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
+              <normal_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png</normal_map>
+              <roughness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
+              <metalness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
             </metal>
           </pbr>
         </material>
@@ -214,7 +214,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://vrx_gazebo/models/sensor_post/mesh/sensor_post_arm.dae</uri>
+            <uri>package://vrx_gazebo/models/sensor_post/mesh/sensor_post_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -223,7 +223,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://vrx_gazebo/models/mono_camera/mesh/mono_camera.dae</uri>
+            <uri>package://vrx_gazebo/models/mono_camera/mesh/mono_camera.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -231,10 +231,10 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <albedo_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
-              <normal_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png</normal_map>
-              <roughness_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
-              <metalness_map>model://vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
+              <albedo_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
+              <normal_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png</normal_map>
+              <roughness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
+              <metalness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
             </metal>
           </pbr>
         </material>
@@ -345,7 +345,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://motor/engine/mesh/engine.dae</uri>
+            <uri>package://motor/engine/mesh/engine.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -398,7 +398,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://motor/propeller/mesh/propeller.dae</uri>
+            <uri>package://motor/propeller/mesh/propeller.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -482,7 +482,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://motor/engine/mesh/engine.dae</uri>
+            <uri>package://motor/engine/mesh/engine.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -535,7 +535,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://motor/propeller/mesh/propeller.dae</uri>
+            <uri>package://motor/propeller/mesh/propeller.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -616,7 +616,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sensors/gps/mesh/gps.dae</uri>
+            <uri>package://sensors/gps/mesh/gps.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -813,7 +813,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
+            <uri>package://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -822,7 +822,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://sensors/3d_lidar/mesh/3d_lidar.dae</uri>
+            <uri>package://sensors/3d_lidar/mesh/3d_lidar.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -830,10 +830,10 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <albedo_map>model://sensors/3d_lidar/mesh/3d_Lidar_Albedo.png</albedo_map>
-              <normal_map>model://sensors/3d_lidar/mesh/3d_Lidar_Normal.png</normal_map>
-              <roughness_map>model://sensors/3d_lidar/mesh/3d_Lidar_Roughness.png</roughness_map>
-              <metalness_map>model://sensors/3d_lidar/mesh/3d_Lidar_Metalness.png</metalness_map>
+              <albedo_map>package://sensors/3d_lidar/mesh/3d_Lidar_Albedo.png</albedo_map>
+              <normal_map>package://sensors/3d_lidar/mesh/3d_Lidar_Normal.png</normal_map>
+              <roughness_map>package://sensors/3d_lidar/mesh/3d_Lidar_Roughness.png</roughness_map>
+              <metalness_map>package://sensors/3d_lidar/mesh/3d_Lidar_Metalness.png</metalness_map>
             </metal>
           </pbr>
         </material>
