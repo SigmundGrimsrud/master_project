@@ -142,22 +142,6 @@ def thrust(model_name, side):
         ros_type='std_msgs/msg/Float64',
         direction=BridgeDirection.ROS_TO_GZ)
 
-def catamaran_thrust_rear_left():
-    return Bridge(
-    	gz_topic=f'/catamaran/thrusters/rear_left',
-        ros_topic=f'/catamaran/thrusters/rear_left',
-        gz_type='ignition.msgs.Double',
-        ros_type='std_msgs/msg/Float64',
-        direction=BridgeDirection.ROS_TO_GZ)
-
-def catamaran_thrust_rear_right():
-    return Bridge(
-    	gz_topic=f'/catamaran/thrusters/rear_right',
-        ros_topic=f'/catamaran/thrusters/rear_right',
-        gz_type='ignition.msgs.Double',
-        ros_type='std_msgs/msg/Float64',
-        direction=BridgeDirection.ROS_TO_GZ)
-
 def thrust_joint_pos(model_name, side):
     # ROS naming policy indicates that first character of a name must be an alpha
     # character. In the case below, the gz topic has the joint index 0 as the
