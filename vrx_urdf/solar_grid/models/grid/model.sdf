@@ -23,11 +23,11 @@
         </geometry>
       </collision>
       <inertial>
-        <mass>2000</mass> <!-- kg -->
+        <mass>20000</mass> <!-- kg -->
         <inertia>
-          <ixx>12000</ixx>
-          <iyy>39300</iyy>
-          <izz>44600</izz>
+          <ixx>120000</ixx>
+          <iyy>393000</iyy>
+          <izz>446000</izz>
         </inertia>
       </inertial>
     </link>
