@@ -235,6 +235,7 @@ def competition_bridges(world_name, competition_mode=False):
     ))
     return nodes
 
+  
 def catamaran_bridges(world_name=None, models=None):
     if world_name is None and models is None:
         world_name = 'simple_grid'
@@ -320,8 +321,8 @@ def spawn(sim_mode: str, world_name: str, models: list[str], robot:str|None = No
                 executable='parameter_bridge',
                 output='screen',
                 arguments=[bridge.argument() for bridge in bridges],
-                remappings=[bridge.remapping() for bridge in bridges],
-                # remappings=[(bridge.remapping()[0], bridge.remapping()[1].replace('/model/catamaran', '')) for bridge in bridges],
+                # remappings=[bridge.remapping() for bridge in bridges],
+                remappings=[(bridge.remapping()[0], bridge.remapping()[1].lstrip('/')) for bridge in bridges],
             ))
 
             # tf broadcaster (sensors)
