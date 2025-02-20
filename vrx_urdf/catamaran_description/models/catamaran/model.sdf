@@ -418,7 +418,7 @@
             /catamaran/thrusters/rear_left/ang_vel
       -->
       <namespace>catamaran</namespace>
-      <topic>thrusters/rear_left</topic>
+      <topic>thrusters/rear_left/thrust</topic>
       <name>rear_left</name>
     </plugin>
 
@@ -555,7 +555,7 @@
             /catamaran/thrusters/rear_right/ang_vel
       -->
       <namespace>catamaran</namespace>
-      <topic>thrusters/rear_right</topic>
+      <topic>thrusters/rear_right/thrust</topic>
       <name>rear_right</name>
     </plugin>
 
@@ -759,13 +759,13 @@
     </link>
 
     <!-- 3D LIDAR -->
-    <joint name='3d_lidar_catamaran_joint' type='fixed'>
+    <joint name='lidar_3d_catamaran_joint' type='fixed'>
       <pose relative_to='base_link'>0 1.325 -1.05 0 0 1.570796326794897 </pose> <!-- Original = 0.63 0 1.52325 0 0 0 -->
       <parent>base_link</parent>
-      <child>3d_lidar_catamaran_link</child>
+      <child>lidar_3d_catamaran_link</child>
     </joint>
-    <link name='3d_lidar_catamaran_link'>
-    <pose relative_to='3d_lidar_catamaran_joint'>0 0 0 0 0 0</pose>
+    <link name='lidar_3d_catamaran_link'>
+    <pose relative_to='lidar_3d_catamaran_joint'>0 0 0 0 0 0</pose>
     <collision name='base_link_fixed_joint_lump__lidar_catamaran_post_collision_collision_33'>
         <pose>0.63 0 1.52325 0 0 0</pose> <!-- 0 2.8 0.25 0 0 1.570796326794897 -->
         <geometry>

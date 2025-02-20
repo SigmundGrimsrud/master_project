@@ -1,0 +1,55 @@
+[    {
+    "command": "ssmacro.replace",
+    "args": {
+        "info": "Remove unwanted characters from log fiels",
+        "find": "\u001B",
+        "replace": "",
+        "all": true,
+        "reg": true,
+        "flag": "gm"
+    }
+},
+{
+    "command": "ssmacro.replace",
+    "args": {
+        "info": "Remove unwanted characters from log fiels",
+        "find": "\\[1;36m",
+        "replace": "",
+        "all": true,
+        "reg": true,
+        "flag": "gm"
+    }
+},
+{
+    "command": "ssmacro.replace",
+    "args": {
+        "info": "Remove unwanted characters from log fiels",
+        "find": "\\[1;33m",
+        "replace": "",
+        "all": true,
+        "reg": true,
+        "flag": "gm"
+    }
+},
+{
+    "command": "ssmacro.replace",
+    "args": {
+        "info": "Remove unwanted characters from log fiels",
+        "find": "\\[1;32m",
+        "replace": "",
+        "all": true,
+        "reg": true,
+        "flag": "gm"
+    }
+},
+{
+    "command": "ssmacro.replace",
+    "args": {
+        "info": "Remove unwanted characters from log fiels",
+        "find": "\\[0m",
+        "replace": "",
+        "all": true,
+        "reg": true,
+        "flag": "gm"
+    }
+}]
