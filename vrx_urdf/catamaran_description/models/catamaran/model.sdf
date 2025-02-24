@@ -28,11 +28,14 @@
       </collision>
       
       <inertial>
-        <mass>580</mass> <!-- kg -->
+        <mass>1427</mass> <!-- kg -->
         <inertia>
-          <ixx>360</ixx>
-          <iyy>1200</iyy>
-          <izz>1350</izz>
+          <ixx>3540.86527651</ixx>
+          <iyy>12325.88017745</iyy>
+          <izz>9076.21636449</izz>
+          <ixy>5.46467402</ixy>
+          <ixz>154.18857908</ixz>
+          <iyz>-83.75319834</iyz>
         </inertia>
       </inertial>
     </link>
@@ -109,7 +112,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://vrx_gazebo/models/mono_camera/mesh/mono_camera.dae</uri>
+            <uri>package://sensors/mono_camera/mesh/mono_camera.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -117,10 +120,10 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <albedo_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
-              <normal_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png</normal_map>
-              <roughness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
-              <metalness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
+              <albedo_map>package://sensors/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
+              <normal_map>package://sensors/mono_camera/mesh/mono_camera_Normal.png</normal_map>
+              <roughness_map>package://sensors/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
+              <metalness_map>package://sensors/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
             </metal>
           </pbr>
         </material>
@@ -214,7 +217,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://vrx_gazebo/models/sensor_post/mesh/sensor_post_arm.dae</uri>
+            <uri>package://sensors/sensor_post/mesh/sensor_post_arm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -223,7 +226,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>package://vrx_gazebo/models/mono_camera/mesh/mono_camera.dae</uri>
+            <uri>package://sensors/mono_camera/mesh/mono_camera.dae</uri>
           </mesh>
         </geometry>
         <material>
@@ -231,10 +234,10 @@
           <specular>1 1 1 1</specular>
           <pbr>
             <metal>
-              <albedo_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
-              <normal_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Normal.png</normal_map>
-              <roughness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
-              <metalness_map>package://vrx_gazebo/models/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
+              <albedo_map>package://sensors/mono_camera/mesh/mono_camera_Albedo.png</albedo_map>
+              <normal_map>package://sensors/mono_camera/mesh/mono_camera_Normal.png</normal_map>
+              <roughness_map>package://sensors/mono_camera/mesh/mono_camera_Roughness.png</roughness_map>
+              <metalness_map>package://sensors/mono_camera/mesh/mono_camera_Metalness.png</metalness_map>
             </metal>
           </pbr>
         </material>
