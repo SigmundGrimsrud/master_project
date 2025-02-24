@@ -270,7 +270,7 @@
     <plugin name='vrx::PolyhedraBuoyancyDrag'
             filename='libPolyhedraBuoyancyDrag.so'>
       <fluid_density>1000</fluid_density>
-      <fluid_level>0.0</fluid_level>
+      <fluid_level>0.15</fluid_level>
       <linear_drag>120.0</linear_drag>
       <angular_drag>20.0</angular_drag>
       <buoyancy name='collision_outer'>
@@ -289,7 +289,7 @@
 
     <enable_wind>true</enable_wind>
 
-    <!-- Thrusters left
+    <!-- Thrusters rear left
     **********************
     **********************
     **********************
@@ -408,7 +408,7 @@
     </link>
 
 
-    <!-- Thruster left -->
+    <!-- Thruster rear left -->
     <plugin name='gz::sim::systems::Thruster' filename='gz-sim-thruster-system'>
       <joint_name>left_engine_propeller_joint</joint_name>
       <thrust_coefficient>0.004422</thrust_coefficient>
@@ -426,7 +426,7 @@
       <name>rear_left</name>
     </plugin>
 
-    <!-- Thrusters right
+    <!-- Thrusters rear right
     **********************
     **********************
     **********************
@@ -545,7 +545,7 @@
     </link>
 
 
-    <!-- Thruster right -->
+    <!-- Thruster rear right -->
     <plugin name='gz::sim::systems::Thruster' filename='gz-sim-thruster-system'>
       <joint_name>right_engine_propeller_joint</joint_name>
       <thrust_coefficient>0.004422</thrust_coefficient>
@@ -561,6 +561,282 @@
       <namespace>catamaran</namespace>
       <topic>thrusters/rear_right/thrust</topic>
       <name>rear_right</name>
+    </plugin>
+
+    <!-- Thrusters front left
+    **********************
+    **********************
+    **********************
+    **********************
+    -->
+    <joint name='front_left_chassis_engine_joint' type='fixed'>
+      <pose relative_to='base_link'>-2.9 2.0 -0.2 0 0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_engine_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_left_engine_link'>
+      <pose relative_to='front_left_chassis_engine_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>15</mass>
+        <inertia>
+          <ixx>0.88925</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.911125</iyy>
+          <iyz>0</iyz>
+          <izz>0.078125</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_engine_link_fixed_joint_lump__front_left_engine_vertical_axis_collision_collision'>
+        <pose>-0.16 0 -0.24 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.15 0.83</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='front_left_engine_link_fixed_joint_lump__front_left_engine_rear_end_collision_collision_1'>
+        <pose>-0.34 0 0.12 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.15 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='front_left_engine_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://motor/engine/mesh/engine.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_left_engine_propeller_joint' type='revolute'>
+      <pose relative_to='front_left_engine_link'>-0.278156 0 -0.509371 0 0 0</pose>
+      <parent>front_left_engine_link</parent>
+      <child>front_left_propeller_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-10000</lower>
+          <upper>10000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.05</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_left_propeller_link'>
+      <pose relative_to='front_left_engine_propeller_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.008545</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.008545</iyy>
+          <iyz>0</iyz>
+          <izz>0.0144</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_propeller_link_fixed_joint_lump__front_left_propeller_collision_collision'>
+        <pose>-0.08 0 0 0 1.570796326794897 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.24</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='front_left_propeller_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://motor/propeller/mesh/propeller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <!-- Thruster front left -->
+    <plugin name='gz::sim::systems::Thruster' filename='gz-sim-thruster-system'>
+      <joint_name>front_left_engine_propeller_joint</joint_name>
+      <thrust_coefficient>0.004422</thrust_coefficient>
+      <thrust_direction>1 0 0</thrust_direction>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>500</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
+      <!-- Naming for thrust topics. Results in:
+            /thrusters/front_left
+            /thrusters/front_left/ang_vel
+      -->
+      <namespace>catamaran</namespace>
+      <topic>thrusters/front_left/thrust</topic>
+      <name>front_left</name>
+    </plugin>
+
+    <!-- Thrusters front right
+    **********************
+    **********************
+    **********************
+    **********************
+    -->
+    <joint name='front_right_chassis_engine_joint' type='fixed'>
+      <pose relative_to='base_link'>2.9 2.0 -0.2 0 0 3.1415926</pose>
+      <parent>base_link</parent>
+      <child>front_right_engine_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-3.1415926535897931</lower>
+          <upper>3.1415926535897931</upper>
+          <effort>10</effort>
+          <velocity>10</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_right_engine_link'>
+      <pose relative_to='front_right_chassis_engine_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>15</mass>
+        <inertia>
+          <ixx>0.88925</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.911125</iyy>
+          <iyz>0</iyz>
+          <izz>0.078125</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_engine_link_fixed_joint_lump__front_right_engine_vertical_axis_collision_collision'>
+        <pose>-0.16 0 -0.24 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.2 0.15 0.83</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='front_right_engine_link_fixed_joint_lump__front_right_engine_rear_end_collision_collision_1'>
+        <pose>-0.34 0 0.12 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.12 0.15 0.12</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='front_right_engine_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://motor/engine/mesh/engine.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_right_engine_propeller_joint' type='revolute'>
+      <pose relative_to='front_right_engine_link'>-0.278156 0 -0.509371 0 0 0</pose>
+      <parent>front_right_engine_link</parent>
+      <child>front_right_propeller_link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <effort>100</effort>
+          <velocity>100</velocity>
+          <lower>-10000</lower>
+          <upper>10000</upper>
+        </limit>
+        <dynamics>
+          <damping>0.05</damping>
+          <friction>0.05</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_right_propeller_link'>
+      <pose relative_to='front_right_engine_propeller_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.008545</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.008545</iyy>
+          <iyz>0</iyz>
+          <izz>0.0144</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_propeller_link_fixed_joint_lump__front_right_propeller_collision_collision'>
+        <pose>-0.08 0 0 0 1.570796326794897 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.18</length>
+            <radius>0.24</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='front_right_propeller_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://motor/propeller/mesh/propeller.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+
+
+    <!-- Thruster front right -->
+    <plugin name='gz::sim::systems::Thruster' filename='gz-sim-thruster-system'>
+      <joint_name>front_right_engine_propeller_joint</joint_name>
+      <thrust_coefficient>0.004422</thrust_coefficient>
+      <thrust_direction>-1 0 0</thrust_direction>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <velocity_control>true</velocity_control>
+      <max_thrust_cmd>500</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
+      <!-- Naming for thrust topics. Results in:
+            /thrusters/front_right
+            /thrusters/front_right/ang_vel
+      -->
+      <namespace>catamaran</namespace>
+      <topic>thrusters/front_right/thrust</topic>
+      <name>front_right</name>
     </plugin>
 
     <!-- GPS -->

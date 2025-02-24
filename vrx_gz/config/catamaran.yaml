@@ -96,3 +96,25 @@ joy_teleop:
           axis: 3
           scale: 1000.0
           offset: 0
+          
+    front_left_thrust:
+      type: topic
+      interface_type: std_msgs/msg/Float64
+      topic_name: /catamaran/thrusters/front_left/thrust
+      deadman_buttons: [4]
+      axis_mappings:
+        data:
+          axis: 4
+          scale: 500.0
+          offset: 0
+          
+    front_right_thrust:
+      type: topic
+      interface_type: std_msgs/msg/Float64
+      topic_name: /catamaran/thrusters/front_right/thrust
+      deadman_buttons: [4]
+      axis_mappings:
+        data:
+          axis: 5
+          scale: 500.0
+          offset: 0

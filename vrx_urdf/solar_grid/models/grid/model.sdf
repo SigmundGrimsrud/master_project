@@ -37,7 +37,7 @@
     <plugin name="vrx::PolyhedraBuoyancyDrag"
             filename="libPolyhedraBuoyancyDrag.so">
       <fluid_density>1000</fluid_density>
-      <fluid_level>0.4</fluid_level>
+      <fluid_level>0.5</fluid_level>
       <linear_drag>125.0</linear_drag>
       <angular_drag>20.0</angular_drag>
       <buoyancy name="grid_buoyancy">
