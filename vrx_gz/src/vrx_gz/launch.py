@@ -31,6 +31,8 @@ from launch_ros.actions import PushRosNamespace
 import vrx_gz.bridges
 import vrx_gz.payload_bridges
 
+from vrx_gz.bridge import Bridge, BridgeDirection
+
 import os
 
 GYMKHANA_WORLDS = [
@@ -271,13 +273,31 @@ def spawn(sim_mode: str, world_name: str, models: list[str], robot:str|None = No
             bridges.extend(payload_bridges)
             nodes.extend(payload_nodes)
 
+            ##### Grid gps bridge
+            def gz_prefix(world_name, model_name, link_name, sensor_name):
+                return f'/world/{world_name}/model/{model_name}/link/{link_name}/sensor/{sensor_name}'
+            def ros_prefix(sensor_name, sensor_type):
+                return f'/solar_grid/sensors/{sensor_type}/{sensor_name}'
+            
+            if world_name == 'simple_grid':
+                gz_sensor_prefix = gz_prefix(world_name, 'solar_grid', 'gps_grid_link', 'navsat')
+                ros_sensor_prefix = ros_prefix('', 'gps')
+
+                bridges.extend([Bridge(
+                    gz_topic=f'{gz_sensor_prefix}/navsat',
+                    ros_topic=f'{ros_sensor_prefix}gps/fix',
+                    gz_type='ignition.msgs.NavSat',
+                    ros_type='sensor_msgs/msg/NavSatFix',
+                    direction=BridgeDirection.GZ_TO_ROS)])
+            #####
+
             nodes.append(Node(
                 package='ros_gz_bridge',
                 executable='parameter_bridge',
                 output='screen',
                 arguments=[bridge.argument() for bridge in bridges],
-                # remappings=[bridge.remapping() for bridge in bridges],
-                remappings=[(bridge.remapping()[0], bridge.remapping()[1].lstrip('/')) for bridge in bridges],
+                remappings=[bridge.remapping() for bridge in bridges],
+                # remappings=[(bridge.remapping()[0], bridge.remapping()[1].lstrip('/')) for bridge in bridges],
             ))
 
             # tf broadcaster (sensors)

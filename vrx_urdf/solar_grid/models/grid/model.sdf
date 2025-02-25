@@ -53,6 +53,72 @@
         <topic>/vrx/wavefield/parameters</topic>
       </wavefield>
     </plugin>
+
+    <!-- GPS -->
+    <joint name='gps_grid_joint' type='revolute'>
+      <pose relative_to='grid_link'>-1.7 -1 -0.3 0 0 0</pose>
+      <parent>grid_link</parent>
+      <child>gps_grid_link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>1000</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='gps_grid_link'>
+      <pose relative_to='gps_grid_joint'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.006458</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.006458</iyy>
+          <iyz>0</iyz>
+          <izz>0.01125</izz>
+        </inertia>
+      </inertial>
+      <collision name='gps_grid_link_fixed_joint_lump__gps_grid_collision_base_collision'>
+        <pose>0 0 0.025 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.05</length>
+            <radius>0.015</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='gps_grid_link_fixed_joint_lump__gps_grid_collision_antenna_collision_1'>
+        <pose>0 0 0.11 0 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.1</length>
+            <radius>0.15</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <visual name='gps_grid_link_fixed_joint_lump__gps_grid_visual_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>package://sensors/gps/mesh/gps.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <sensor name='navsat' type='navsat'>
+        <always_on>true</always_on>
+        <update_rate>20</update_rate>
+      </sensor>
+    </link>
   
   </model>
 </sdf>
