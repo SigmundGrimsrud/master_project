@@ -11,10 +11,10 @@
           </mesh>
         </geometry>
         <material>
-          <!--Red color-->
-          <ambient>1 0 0 1</ambient>
-          <diffuse>1 0 0 1</diffuse>
-          <specular>0.1 0.1 0.1 1</specular>
+          <script>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+            <name>Gazebo/Red</name>
+          </script>
         </material>
       </visual>
       
@@ -39,30 +39,6 @@
         </inertia>
       </inertial>
     </link>
-
-        <!-- Buoyancy plugin -->
-    <plugin name='vrx::PolyhedraBuoyancyDrag'
-            filename='libPolyhedraBuoyancyDrag.so'>
-      <fluid_density>1000</fluid_density>
-      <fluid_level>0.15</fluid_level>
-      <linear_drag>10.0</linear_drag>
-      <angular_drag>5.0</angular_drag>
-      <buoyancy name='collision_outer'>
-        <link_name>base_link</link_name>
-        <pose>0 0 0 0 0 0</pose>
-        <geometry>
-          <box>
-            <size>6 6 1</size>
-          </box>
-        </geometry>
-      </buoyancy>
-      <wavefield>
-        <topic>/vrx/wavefield/parameters</topic>
-      </wavefield>
-    </plugin>
-
-    <enable_wind>true</enable_wind>
-    
 
     <joint name='front_left_camera_joint' type='fixed'>
       <pose relative_to='base_link'>-2.85 1.25 -1.05 0 0 1.570796326794897</pose> <!-- Original sensor = 0.75 0.1 1.5 0 0.261799 0 -->
@@ -289,6 +265,29 @@
         <pose>0.75 -0.1 1.5 0 0.261799 0</pose>
       </sensor>
     </link>
+    
+    <!-- Buoyancy plugin -->
+    <plugin name='vrx::PolyhedraBuoyancyDrag'
+            filename='libPolyhedraBuoyancyDrag.so'>
+      <fluid_density>1000</fluid_density>
+      <fluid_level>0.15</fluid_level>
+      <linear_drag>120.0</linear_drag>
+      <angular_drag>20.0</angular_drag>
+      <buoyancy name='collision_outer'>
+        <link_name>base_link</link_name>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>6 6 1</size>
+          </box>
+        </geometry>
+      </buoyancy>
+      <wavefield>
+        <topic>/vrx/wavefield/parameters</topic>
+      </wavefield>
+    </plugin>
+
+    <enable_wind>true</enable_wind>
 
     <!-- Thrusters rear left
     **********************
