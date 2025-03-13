@@ -2,10 +2,15 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
+from ament_index_python.packages import get_package_share_directory
+import os
 
 def generate_launch_description():
-    ekf_params = LaunchConfiguration('ekf_params')
-    navsat_params = LaunchConfiguration('navsat_params')
+    rl_params_file = os.path.join(
+        get_package_share_directory('vrx_nav2'),
+        'config',
+        'ekf_navsat_params.yaml'
+    )
 
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -23,7 +28,7 @@ def generate_launch_description():
             executable='ekf_node',
             name='ekf_filter_node_odom',
             output='screen',
-            parameters=[ekf_params],
+            parameters=[rl_params_file],
             remappings=[('/odometry/filtered', '/odometry/local')]
         ),
         Node(
@@ -31,7 +36,7 @@ def generate_launch_description():
             executable='ekf_node',
             name='ekf_filter_node_map',
             output='screen',
-            parameters=[ekf_params],
+            parameters=[rl_params_file],
             remappings=[('/odometry/filtered', '/odometry/global')]
         ),
         Node(
@@ -39,11 +44,11 @@ def generate_launch_description():
             executable='navsat_transform_node',
             name='navsat_transform_node',
             output='screen',
-            parameters=[navsat_params],
+            parameters=[rl_params_file],
             remappings=[
                 ('/imu/data', '/catamaran/sensors/imu/imu/data'),
                 ('/gps/fix', '/catamaran/sensors/gps/gps/fix'),
-                ('/odometry/filtered', '/odom/global'),                # Already correct
+                ('/odometry/filtered', '/odometry/global'),                # Already correct
                 ('/odometry/gps', '/odometry/gps')              # Output topic
             ]
         )

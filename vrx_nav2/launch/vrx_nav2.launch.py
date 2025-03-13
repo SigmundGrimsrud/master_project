@@ -18,16 +18,6 @@ def generate_launch_description():
         'config',
         'nav2_params.yaml'
     )
-    ekf_params = os.path.join(
-        get_package_share_directory('vrx_nav2'),
-        'config',
-        'ekf_filter_node.yaml'
-    )
-    navsat_params = os.path.join(
-        get_package_share_directory('vrx_nav2'),
-        'config',
-        'navsat_transform.yaml'
-    )
 
     # Launch VRX
     # vrx_launch = IncludeLaunchDescription(
@@ -56,6 +46,7 @@ def generate_launch_description():
         ]],
         shell=True, output='screen')
 
+
     # Launch Nav2
     nav2_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
@@ -70,20 +61,16 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([
             get_package_share_directory('vrx_nav2'),
             '/launch/localization.launch.py'
-        ]),
-        launch_arguments={
-            'ekf_params': ekf_params,
-            'navsat_params': navsat_params
-        }.items()
+        ])
     )
 
-    amcl_node = Node(  
-        package='nav2_amcl',  
-        executable='amcl',  
-        name='amcl',  
-        output='screen',  
-        parameters=[{'use_sim_time': True}]  
-    )
+    # amcl_node = Node(  
+    #     package='nav2_amcl',  
+    #     executable='amcl',  
+    #     name='amcl',  
+    #     output='screen',  
+    #     parameters=[{'use_sim_time': True}]  
+    # )
 
     odometry_node = Node(
         package='vrx_nav2',
@@ -94,10 +81,10 @@ def generate_launch_description():
 
     return LaunchDescription([
         vrx_launch,
-        nav2_launch,
         localization_launch,
         odometry_node,
+        nav2_launch,
         map_server,
-        map_activate,
-        amcl_node
+        map_activate
+        # amcl_node
     ])
