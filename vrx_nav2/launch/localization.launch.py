@@ -21,10 +21,18 @@ def generate_launch_description():
         Node(
             package='robot_localization',
             executable='ekf_node',
-            name='ekf_node',
+            name='ekf_filter_node_odom',
             output='screen',
             parameters=[ekf_params],
-            remappings=[('/odometry/filtered', '/odom')]
+            remappings=[('/odometry/filtered', '/odometry/local')]
+        ),
+        Node(
+            package='robot_localization',
+            executable='ekf_node',
+            name='ekf_filter_node_map',
+            output='screen',
+            parameters=[ekf_params],
+            remappings=[('/odometry/filtered', '/odometry/global')]
         ),
         Node(
             package='robot_localization',
@@ -35,7 +43,7 @@ def generate_launch_description():
             remappings=[
                 ('/imu/data', '/catamaran/sensors/imu/imu/data'),
                 ('/gps/fix', '/catamaran/sensors/gps/gps/fix'),
-                ('/odometry/filtered', '/odom'),                # Already correct
+                ('/odometry/filtered', '/odom/global'),                # Already correct
                 ('/odometry/gps', '/odometry/gps')              # Output topic
             ]
         )

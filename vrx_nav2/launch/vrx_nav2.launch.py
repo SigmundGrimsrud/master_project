@@ -21,7 +21,7 @@ def generate_launch_description():
     ekf_params = os.path.join(
         get_package_share_directory('vrx_nav2'),
         'config',
-        'ekf_localization.yaml'
+        'ekf_filter_node.yaml'
     )
     navsat_params = os.path.join(
         get_package_share_directory('vrx_nav2'),
