@@ -24,6 +24,17 @@
     "command": "ssmacro.replace",
     "args": {
         "info": "Remove unwanted characters from log fiels",
+        "find": "\\[34m",
+        "replace": "",
+        "all": true,
+        "reg": true,
+        "flag": "gm"
+    }
+},
+{
+    "command": "ssmacro.replace",
+    "args": {
+        "info": "Remove unwanted characters from log fiels",
         "find": "\\[1;33m",
         "replace": "",
         "all": true,
@@ -46,7 +57,7 @@
     "command": "ssmacro.replace",
     "args": {
         "info": "Remove unwanted characters from log fiels",
-        "find": "\\[34m",
+        "find": "\\[1;31m",
         "replace": "",
         "all": true,
         "reg": true,

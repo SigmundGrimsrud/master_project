@@ -1,11 +1,21 @@
 navsat_transform_node:
   ros__parameters:
+    frequency: 30.0
+    delay: 3.0
     magnetic_declination_radians: 0.0
     yaw_offset: 0.0
     zero_altitude: true
-    use_odometry_yaw: false
-    wait_for_datum: true
-    broadcast_utm_transform: true  # Publish map → odom transform
-    broadcast_utm_transform_as_parent_frame: true # map as parent of odom
-    utm_frame_id: map              # Set the parent frame to "map"
-    odom_frame_id: odom            # Set the child frame to "odom"
+    broadcast_utm_transform: true
+    publish_filtered_gps: true
+    use_odometry_yaw: true
+
+
+    # magnetic_declination_radians: 0.0
+    # yaw_offset: 0.0
+    # zero_altitude: true
+    # use_odometry_yaw: false
+    # wait_for_datum: true
+    # broadcast_cartesian_transform: true                   # Publish world → utm transform
+    # broadcast_cartesian_transform_as_parent_frame: false  # map as parent of odom, utm → world
+    # cartesian_frame_id: map                               # Set the parent frame to "map" # error if not map or odom
+    # odom_frame_id: odom                                   # Set the child frame to "odom"
