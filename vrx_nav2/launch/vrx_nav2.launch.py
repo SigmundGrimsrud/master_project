@@ -36,16 +36,11 @@ def generate_launch_description():
               'yaml_filename:=/home/sigmu/master/src/vrx/vrx_ros/src/solar_grid/solar_grid.yaml'],
         output='screen')
     
-    # Does not work, must be launched in terminal manually as of now
-    # map_activate = ExecuteProcess(
-    #     cmd=['sleep', '60',';', 'ros2', 'lifecycle', 'set', '/map_server', 'configure;',
-    #          'sleep', '1', ';', 'ros2', 'lifecycle', 'set', '/map_server', 'activate'],
-    #     output='screen')
     map_activate = ExecuteProcess(
-        cmd=[['sleep 10; ros2 lifecycle set /map_server configure; ros2 lifecycle set /map_server activate; ros2 run vrx_nav2 set_datum.py'
+        cmd=[['sleep 4; ros2 lifecycle set /map_server configure; ros2 lifecycle set /map_server activate'
         ]],
         shell=True, output='screen')
-
+    #; ros2 run vrx_nav2 set_datum.py
 
     # Launch Nav2
     nav2_launch = IncludeLaunchDescription(

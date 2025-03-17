@@ -1,7 +1,8 @@
 image: solar_grid.pgm
 mode: trinary
 resolution: 0.07
-origin: [-17.0, 30.0, 0.0]
+origin: [-18.7, 1.0, 0.0]
+#origin: [513559.94, 6508977.83, 0.0]  # Easting Northing UTM
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.25
