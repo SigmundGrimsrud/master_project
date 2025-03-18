@@ -11,13 +11,9 @@ class SetDatum(Node):
 
     def publish_datum(self):
         datum = NavSatFix()
-        datum.latitude = 58.7205800  # VRX world's origin latitude
-        datum.longitude = 9.2341800  # VRX world's origin longitude
+        datum.latitude = 58.72058
+        datum.longitude = 9.23418
         self.pub.publish(datum)
-        """
-        <latitude_deg>58.72058</latitude_deg>
-        <longitude_deg>9.23418</longitude_deg>
-        """
 
 def main(args=None):
     rclpy.init(args=args)

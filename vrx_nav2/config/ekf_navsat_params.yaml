@@ -60,7 +60,7 @@ ekf_filter_node_map:
 navsat_transform_node:
   ros__parameters:
     frequency: 3.0
-    # delay: 0.1
+    delay: 3.0
     datum: [58.72058, 9.23418, 0.25]
     wait_for_datum: false
     magnetic_declination_radians: 0.0
