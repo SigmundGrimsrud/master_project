@@ -43,7 +43,7 @@ controller_server:
       plugin: "dwb_core::DWBLocalPlanner"
       debug_trajectory_details: True
       # Required critics
-      critics: ["RotateToGoal", "Oscillation", "BaseObstacle", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+      critics: ["RotateToGoal", "Oscillation", "ObstacleFootprintCritic", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
       BaseObstacle.scale: 0.02
       PathAlign.scale: 32.0
       PathAlign.forward_point_distance: 0.1
@@ -79,12 +79,13 @@ local_costmap:
       origin_x: &x_pos -30.0
       origin_y: &y_pos -10.0
       resolution: 0.07
-      robot_radius: 3.0
+      footprint: &robot_square_footprint "[[-3.0, -3.5], [-3.0, 2.5], [3.0, 2.5], [3.0, -3.5]]"
+      #robot_radius: 3.0
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 3.1
+        inflation_radius: 0.3
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
@@ -117,7 +118,7 @@ global_costmap:
       publish_frequency: 20.0
       global_frame: map
       robot_base_frame: "catamaran/base_link"
-      robot_radius: 3.0
+      footprint: *robot_square_footprint
       resolution: 0.07
       origin_x: -45.0
       origin_y: -30.0
@@ -149,5 +150,5 @@ global_costmap:
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
         cost_scaling_factor: 3.0
-        inflation_radius: 3.1
+        inflation_radius: 0.3
       always_send_full_costmap: True

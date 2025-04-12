@@ -2,7 +2,11 @@ image: solar_grid.pgm
 mode: trinary
 resolution: 0.07
 origin: [-18.6, 1.0, 0.0]
-#origin: [513559.94, 6508977.83, 0.0]  # Easting Northing UTM
+# GPS receiver at pixel (222, 210) Left to right, top to bottom out of 413 pixels
+# Converted to l->r b->t (222, 203) --- In meters (15.54, 14.21)
+# origin UTM: [513559.94, 6508977.83, 0.0]  # Easting Northing UTM
+# World origin GPS: [58.72058, 9.23418, 0.0]
+# map origin GPS:   [58.72071_9573, 9.23426_2964, 0.0]
 negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.25
