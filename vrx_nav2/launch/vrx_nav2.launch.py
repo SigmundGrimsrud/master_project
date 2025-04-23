@@ -59,6 +59,13 @@ def generate_launch_description():
         ])
     )
 
+    motorcontroller_node = Node(
+        package='vrx_nav2',
+        executable='dual_usv_controller.py',
+        name='dual_usv_controller',
+        output='screen'
+    )
+
     # amcl_node = Node(  
     #     package='nav2_amcl',  
     #     executable='amcl',  
@@ -80,6 +87,7 @@ def generate_launch_description():
         odometry_node,
         nav2_launch,
         map_server,
-        map_activate
+        map_activate,
+        motorcontroller_node
         # amcl_node
     ])

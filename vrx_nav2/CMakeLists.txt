@@ -12,6 +12,7 @@ find_package(vrx_gazebo REQUIRED)
 install(PROGRAMS
   scripts/odometry_node.py
   scripts/set_datum.py
+  scripts/dual_usv_controller.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
