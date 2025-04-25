@@ -8,7 +8,7 @@
 bt_navigator:
   ros__parameters:
     global_frame_id: map
-    robot_base_frame: "catamaran/base_link"
+    robot_base_frame: "catamaran/rotated_base_link"
 
 planner_server:
   ros__parameters:
@@ -40,35 +40,144 @@ controller_server:
       xy_goal_tolerance: 0.25
       yaw_goal_tolerance: 0.25
 
+    # FollowPath:
+    #   plugin: "dwb_core::DWBLocalPlanner"
+    #   debug_trajectory_details: True
+    #   # Required critics
+    #   critics: ["RotateToGoal", "Oscillation", "ObstacleFootprintCritic", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
+    #   BaseObstacle.scale: 0.02
+    #   PathAlign.scale: 32.0
+    #   PathAlign.forward_point_distance: 0.1
+    #   GoalAlign.scale: 24.0
+    #   GoalAlign.forward_point_distance: 0.1
+    #   PathDist.scale: 32.0
+    #   GoalDist.scale: 24.0
+    #   RotateToGoal.scale: 32.0
+    #   RotateToGoal.slowing_factor: 5.0
+    #   RotateToGoal.lookahead_time: -1.0
+    #   # Other DWB parameters
+    #   max_vel_x: 100.0
+    #   min_vel_x: -100.0
+    #   max_vel_y: 0.5
+    #   min_vel_y: -0.5
+    #   max_vel_theta: 10.0
+    #   min_vel_theta: -10.0
+    #   acc_lim_x: 5.0
+    #   acc_lim_y: 0.0
+    #   acc_lim_theta: 1.0
+    #   #
+    #   path_distance_bias: 32.0
+    #   goal_distance_bias: 24.0
+    #   obstacle_bias: 0.1
+  
+    # FollowPath:
+    #   plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
+    #   allow_reversing: true
+    #   rotate_to_heading: false
+    #   desired_linear_vel: 1.0           # Average linear velocity (m/s)
+    #   lookahead_dist: 4.0               # Dynamic lookahead distance (auto-adjusted if use_velocity_scaled_lookahead=true)
+    #   min_lookahead_dist: 3.5           # Minimum lookahead distance (m)
+    #   max_lookahead_dist: 4.7           # Maximum lookahead distance (m)
+    #   rotate_to_heading_angular_vel: 0.5 # Angular velocity during rotation (rad/s)
+    #   use_velocity_scaled_lookahead: false # Adjust lookahead based on speed
+    #   approach_velocity_scaling_dist: 0.5
+    #   use_cost_regulated_linear_velocity_scaling: false
+    #   # max_allowed_time_to_collision: 1.0 # Time threshold for collision checks
+    #   # curvature_threshold: 0.2           # Limit path curvature to avoid sharp turns
+    #   # regulated_linear_scaling: true     # Scale velocity based on path curvature
+    #   # use_collision_detection: true      # Enable obstacle avoidance
+    #   # cost_scaling_dist: 0.6             # Distance to obstacles for cost scaling
+    #   # cost_scaling_gain: 1.0             # Aggressiveness of obstacle avoidance
+    #   max_vel_x: 10.0
+    #   min_vel_x: -10.0
+    #   max_vel_y: 0.0
+    #   min_vel_y: 0.0
+    #   max_vel_theta: 3.0
+    #   min_vel_theta: -3.0
+    #   acc_lim_x: 5.0
+    #   acc_lim_y: 0.0
+    #   acc_lim_theta: 2.0
+
+
     FollowPath:
-      plugin: "dwb_core::DWBLocalPlanner"
-      debug_trajectory_details: True
-      # Required critics
-      critics: ["RotateToGoal", "Oscillation", "ObstacleFootprintCritic", "GoalAlign", "PathAlign", "PathDist", "GoalDist"]
-      BaseObstacle.scale: 0.02
-      PathAlign.scale: 32.0
-      PathAlign.forward_point_distance: 0.1
-      GoalAlign.scale: 24.0
-      GoalAlign.forward_point_distance: 0.1
-      PathDist.scale: 32.0
-      GoalDist.scale: 24.0
-      RotateToGoal.scale: 32.0
-      RotateToGoal.slowing_factor: 5.0
-      RotateToGoal.lookahead_time: -1.0
-      # Other DWB parameters
-      max_vel_x: 100.0
-      min_vel_x: -100.0
-      max_vel_y: 0.5
-      min_vel_y: -0.5
-      max_vel_theta: 10.0
-      min_vel_theta: -10.0
-      acc_lim_x: 5.0
-      acc_lim_y: 0.0
-      acc_lim_theta: 1.0
-      #
-      path_distance_bias: 32.0
-      goal_distance_bias: 24.0
-      obstacle_bias: 0.1
+      plugin: "nav2_mppi_controller::MPPIController"
+      time_steps: 56
+      model_dt: 0.1
+      batch_size: 1000
+      vx_std: 0.4
+      vy_std: 0.0 # Not used, only for OmniDrive
+      wz_std: 0.4
+      vx_max: 10.0
+      vx_min: -10.0
+      vy_max: 0.0 # Not used
+      wz_max: 1.0
+      ax_max: 4.0
+      ax_min: -4.0
+      ay_min: 0.0 # Not used
+      ay_max: 0.0 # Not used
+      az_max: 1.0
+      iteration_count: 1
+      prune_distance: 3.7
+      transform_tolerance: 0.2
+      temperature: 0.3
+      gamma: 0.015
+      motion_model: "DiffDrive"
+      visualize: false
+      reset_period: 1.0  # Humble only
+      regenerate_noises: false
+
+      critics: ["ConstraintCritic", "CostCritic", "GoalCritic", "GoalAngleCritic", "PathAlignCritic", "PathFollowCritic", "PathAngleCritic", "PreferForwardCritic"]
+      ConstraintCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 4.0
+      GoalCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 5.0
+        threshold_to_consider: 6.0 # Distance between robot and goal above which goal cost starts being considered
+      GoalAngleCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 3.0
+        threshold_to_consider: 5.0 # Minimal distance between robot and goal above which angle goal cost considered.
+      PreferForwardCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 2.0
+        threshold_to_consider: 20.0 # Can back up if distance to goal is less than this
+      CostCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 3.81
+        critical_cost: 300.0
+        consider_footprint: true
+        collision_cost: 1000000.0
+        near_goal_distance: 1.0
+        trajectory_point_step: 2
+      PathAlignCritic:
+        enabled: true
+        cost_weight: 14.0
+        cost_power: 1
+        threshold_to_consider: 3.0
+        offset_from_furthest: 20
+        trajectory_point_step: 4
+        max_path_occupancy_ratio: 0.05
+        use_path_orientations: true
+      PathAngleCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 2.0
+        threshold_to_consider: 0.5
+        offset_from_furthest: 4
+        max_angle_to_furthest: 1.0
+        mode: 1     # No preference in driving forward or reversing
+      PathFollowCritic:
+        enabled: true
+        cost_power: 1
+        cost_weight: 5.0
+        offset_from_furthest: 9
+        threshold_to_consider: 7.0
 
 local_costmap:
   local_costmap:
@@ -77,14 +186,14 @@ local_costmap:
       update_frequency: 10.0
       publish_frequency: 10.0
       global_frame: odom
-      robot_base_frame: "catamaran/base_link"
+      robot_base_frame: "catamaran/rotated_base_link"
       rolling_window: true
       width: 50
       height: 50
       origin_x: &x_pos -30.0
       origin_y: &y_pos -10.0
       resolution: 0.07
-      footprint: &robot_square_footprint "[[-3.0, -3.5], [-3.0, 2.5], [3.0, 2.5], [3.0, -3.5]]" #"[[-3.0, -3.5], [-3.0, 2.5], [-2.7, 2.5], [-2.7, -3.5]],[[2.7, -3.5], [2.7, 2.5], [3.0, 2.5], [3.0, -3.5]]"
+      footprint: &robot_square_footprint "[[-3.6, -3.0], [-3.6, 3.0], [2.4, 3.0], [2.4, -3.0]]" #"[[-3.0, -3.5], [-3.0, 2.5], [-2.7, 2.5], [-2.7, -3.5]],[[2.7, -3.5], [2.7, 2.5], [3.0, 2.5], [3.0, -3.5]]"
       #robot_radius: 3.0
       plugins: ["voxel_layer", "inflation_layer"]
       inflation_layer:
@@ -102,7 +211,7 @@ local_costmap:
         mark_threshold: 0
         observation_sources: scan
         scan:
-          topic: /scan
+          topic: /scan # /catamaran/sensors/lidars/lidar_catamaran_sensor/scan
           max_obstacle_height: 2.0
           clearing: True
           marking: True
@@ -122,7 +231,7 @@ global_costmap:
       update_frequency: 10.0
       publish_frequency: 10.0
       global_frame: map
-      robot_base_frame: "catamaran/base_link"
+      robot_base_frame: "catamaran/rotated_base_link"
       footprint: *robot_square_footprint
       resolution: 0.07
       origin_x: -45.0
@@ -141,7 +250,7 @@ global_costmap:
         enabled: True
         observation_sources: scan
         scan:
-          topic: /scan
+          topic: /scan # /catamaran/sensors/lidars/lidar_catamaran_sensor/scan
           max_obstacle_height: 2.0
           clearing: True
           marking: True

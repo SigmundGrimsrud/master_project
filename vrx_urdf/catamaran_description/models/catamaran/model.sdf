@@ -1,8 +1,9 @@
 <?xml version='1.0' ?>
 <sdf version='1.9'>
   <model name='catamaran'>
-  
+
     <link name='base_link'>
+      <pose>0 0 0 0 0 0</pose>
       <visual name='visual'>
         <geometry>
           <mesh>
@@ -39,6 +40,26 @@
         </inertia>
       </inertial>
     </link>
+  
+    <link name='rotated_base_link'>
+      <inertial>
+        <mass>0.0001</mass>
+        <inertia>
+          <ixx>0.000001</ixx>
+          <iyy>0.000001</iyy>
+          <izz>0.000001</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+    </link>
+
+    <joint name='base_link_joint' type='fixed'>
+      <parent>base_link</parent>
+      <child>rotated_base_link</child>
+      <pose>0 0 0 0 0 1.5708</pose>  <!-- +90°: aligns +X with previous +Y -->
+    </joint>
 
         <!-- Buoyancy plugin -->
     <plugin name='vrx::PolyhedraBuoyancyDrag'
@@ -908,7 +929,7 @@
 
     <!-- IMU -->
     <joint name='imu_catamaran_joint' type='revolute'>
-      <pose relative_to='base_link'>0.3 -0.2 0.1 0 0 0</pose>
+      <pose relative_to='base_link'>0.3 -0.2 0.1 0 0 1.570796326794897</pose>
       <parent>base_link</parent>
       <child>imu_catamaran_link</child>
       <axis>
