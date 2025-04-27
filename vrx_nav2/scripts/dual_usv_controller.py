@@ -14,7 +14,7 @@ class CmdVelToThrustConverter(Node):
             parameters=[
                 ('propellar_base', 5.5),       # Distance between thrusters (meters)
                 ('linear_scaling', 100.0),   # Scaling factor for linear velocity
-                ('angular_scaling', 10.0),  # Scaling factor for angular velocity
+                ('angular_scaling', 30.0),  # Scaling factor for angular velocity
                 ('max_thrust', 1000.0),     # Maximum thrust output
                 ('min_thrust', -1000.0),    # Minimum thrust output (reverse)
             ]
