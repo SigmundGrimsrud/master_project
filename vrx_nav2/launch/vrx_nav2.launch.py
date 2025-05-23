@@ -74,17 +74,18 @@ def generate_launch_description():
     #     parameters=[{'use_sim_time': True}]  
     # )
 
-    odometry_node = Node(
-        package='vrx_nav2',
-        executable='odometry_node.py',
-        name='odometry_node',
-        output='screen'
-    )
+    # Does nothing? Nothing is published to /odom. Ran and published odometry to /odometry/local /global and /gps
+    # odometry_node = Node(
+    #     package='vrx_nav2',
+    #     executable='odometry_node.py',
+    #     name='odometry_node',
+    #     output='screen'
+    # )
 
     return LaunchDescription([
         vrx_launch,
         localization_launch,
-        odometry_node,
+        # odometry_node,
         nav2_launch,
         map_server,
         map_activate,

@@ -1,3 +1,7 @@
+# Based on example code from
+# https://www.theconstruct.ai/ros2-qa-how-to-follow-waypoints-using-nav2-232/
+# Accessed 02-05-2025
+
 import time
 from copy import deepcopy
 from math import pi
@@ -82,7 +86,7 @@ def main():
         for pt in inspection_route:
             inspection_pose.pose.position.x = pt[0]
             inspection_pose.pose.position.y = pt[1]
-            if pt[2] == 0.0:
+            if pt[2] == 0.0: # Actual -pi
                 inspection_pose.pose.orientation.z = 1.0
                 inspection_pose.pose.orientation.w = 0.0
             elif pt[2] == pi/2:
@@ -91,7 +95,7 @@ def main():
             elif pt[2] == -pi/2:
                 inspection_pose.pose.orientation.z = -0.707
                 inspection_pose.pose.orientation.w = 0.707
-            elif pt[2] == pi:
+            elif pt[2] == pi: # Actual 0.0
                 inspection_pose.pose.orientation.z = 0.0
                 inspection_pose.pose.orientation.w = 1.0
             inspection_points.append(deepcopy(inspection_pose))
